@@ -13,7 +13,7 @@
                 @endif
 
                 @if(count($settings) <= 0)
-                        <a href="/settings/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i>New
+                    <a href="/settings/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i>New
                         Settings</a>
                 @else
                     @foreach($settings as $setting)
@@ -33,9 +33,14 @@
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                {{ $setting->mainurl }}
-                            @endforeach
+                                @foreach($settings as $setting)
+                                    @if($setting->mainurl != NULL)
+                                        {{ $setting->mainurl }}
+
+                                    @else
+                                        n/a
+                                    @endif
+                                @endforeach
                         </div>
                     </div>
                 </div>
@@ -51,9 +56,14 @@
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                {{ $setting->title }}
-                            @endforeach
+                                @foreach($settings as $setting)
+                                    @if($setting->title != NULL)
+                                        {{ $setting->title }}
+
+                                    @else
+                                        n/a
+                                    @endif
+                                @endforeach
                         </div>
                     </div>
                 </div>
@@ -71,7 +81,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->email }}
+                                @if($setting->email != NULL)
+                                    {{ $setting->email }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -88,7 +103,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->address }}
+                                @if($setting->address != NULL)
+                                    {{ $setting->address }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -108,7 +128,8 @@
                     <div class="row">
                         <div class="container">
                             @foreach($settings as $setting)
-                                <img style="margin-top: 10px; margin-left: 15px" src="/assets/img/logo/originals/{{ $setting->logo }}" class="img-fluid"/>
+                                <img style="margin-top: 10px; margin-left: 15px"
+                                     src="/assets/img/logo/originals/{{ $setting->logo }}" class="img-fluid"/>
                             @endforeach
                         </div>
                     </div>
@@ -123,8 +144,14 @@
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
+
                             @foreach($settings as $setting)
-                                {!! $setting->description !!}
+                                @if($setting->description != NULL)
+                                    {!! $setting->description !!}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -142,8 +169,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->link }}
+                                @if($setting->link != NULL)
+                                    {{ $setting->link }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -159,7 +192,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->mobilephone }}
+                                @if($setting->mobilephone != NULL)
+                                    {{ $setting->mobilephone }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -177,7 +215,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->phone }}
+                                @if($setting->phone != NULL)
+                                    {{ $setting->phone }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -218,7 +261,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle1 }}
+                                @if($setting->ctitle1 != NULL)
+                                    {{ $setting->ctitle1 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -235,8 +283,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle1 }}
+                                @if($setting->calttitle1 != NULL)
+                                    {{ $setting->calttitle1 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -255,7 +309,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle2 }}
+                                @if($setting->ctitle2 != NULL)
+                                    {{ $setting->ctitle2 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -272,7 +331,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle2}}
+                                @if($setting->calttitle2 != NULL)
+                                    {{ $setting->calttitle2 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -291,8 +355,14 @@
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
+
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle3 }}
+                                @if($setting->ctitle3 != NULL)
+                                    {{ $setting->ctitle3 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -309,8 +379,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle3 }}
+                                @if($setting->calttitle3 != NULL)
+                                    {{ $setting->calttitle3 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -330,7 +406,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle4 }}
+                                @if($setting->ctitle4 != NULL)
+                                    {{ $setting->ctitle4 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -347,7 +428,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle4 }}
+                                @if($setting->calttitle4 != NULL)
+                                    {{ $setting->calttitle4 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -367,8 +453,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle5 }}
+                                @if($setting->ctitle5 != NULL)
+                                    {{ $setting->ctitle5 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -384,7 +476,12 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle5 }}
+                                @if($setting->calttitle5 != NULL)
+                                    {{ $setting->calttitle5 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -404,8 +501,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->ctitle6 }}
+                                @if($setting->ctitle6 != NULL)
+                                    {{ $setting->ctitle6 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -421,8 +524,14 @@
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                {{ $setting->calttitle6 }}
+                                @if($setting->calttitle6 != NULL)
+                                    {{ $setting->calttitle6 }}
+
+                                @else
+                                    n/a
+                                @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
@@ -431,35 +540,19 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Мапа</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body">
-                            <div id="map-canvas"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
             <div class="col-lg-6">
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Twitter</label>
+                        <label class="bmd-label">LAT</label>
                     </div>
+
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                @if($setting->twitter != NULL)
-                                    {{ $setting->twitter }}
+                                @if($setting->lat != NULL)
+                                    {{ $setting->lat }}
 
                                 @else
                                     n/a
@@ -473,209 +566,100 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Skype</label>
+                        <label class="bmd-label">LNG</label>
                     </div>
+
                     <!--Widget Header-->
                     <div class="row">
                         <div class="card-body" style="margin-left: 10px">
                             @foreach($settings as $setting)
-                                @if($setting->skype != NULL)
-                                    {{ $setting->skype }}
+                                @if($setting->lng != NULL)
+                                    {{ $setting->lng }}
 
                                 @else
                                     n/a
                                 @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
 
-                        <label class="bmd-label">LinkedIn</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                @if($setting->linkedin != NULL)
-                                    {{ $setting->linkedin }}
+        <div class="col-lg-6">
+            <div class="form-group bmd-form-group card">
+                <div class="card-body">
 
-                                @else
-                                    n/a
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
+                    <label class="bmd-label">Последни промени</label>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Google Plus</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                @if($setting->gplus != NULL)
-                                    {{ $setting->gplus }}
-
-                                @else
-                                    n/a
-                                @endif
-                            @endforeach
-                        </div>
+                <!--Widget Header-->
+                <div class="row">
+                    <div class="card-body" style="margin-left: 10px">
+                        @foreach($settings as $setting)
+                            {{ $setting->updated_at->diffForHumans() }}
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+@endsection
 
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Youtube</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                @if($setting->youtube != NULL)
-                                    {{ $setting->youtube }}
-
-                                @else
-                                    n/a
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Flickr</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                @if($setting->flickr != NULL)
-                                    {{ $setting->flickr }}
-
-                                @else
-                                    n/a
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Pinterest</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                @if($setting->pinterest != NULL)
-                                    {{ $setting->pinterest }}
-
-                                @else
-                                    n/a
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group bmd-form-group card">
-                    <div class="card-body">
-
-                        <label class="bmd-label">Последни промени</label>
-                    </div>
-                    <!--Widget Header-->
-                    <div class="row">
-                        <div class="card-body" style="margin-left: 10px">
-                            @foreach($settings as $setting)
-                                {{ $setting->updated_at->diffForHumans() }}
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endsection
-
-    @section('scripts')
+@section('scripts')
 
 
 
-            <script>
-                // initialization of google map
-                function initMap() {
-                    $.HSCore.components.HSGMap.init('.js-g-map');
-                }
+    <script>
+        // initialization of google map
+        function initMap() {
+            $.HSCore.components.HSGMap.init('.js-g-map');
+        }
 
 
-
-                $(document).on('ready', function () {
-                    // initialization of carousel
-                    $.HSCore.components.HSCarousel.init('.js-carousel');
-
-
-                    // initialization of header
-                    $.HSCore.components.HSHeader.init($('#js-header'));
-                    $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-                    // initialization of tabs
-                    $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-                    // initialization of go to section
-                    $.HSCore.components.HSGoTo.init('.js-go-to');
-
-                    $('#processes [role="tablist"] .nav-link').on('click', function () {
-                        setTimeout(function () {
-                            $('#processesTabs .js-carousel').slick('setPosition');
-                        }, 200);
-                    });
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
 
 
-                });
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+            // initialization of go to section
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            $('#processes [role="tablist"] .nav-link').on('click', function () {
+                setTimeout(function () {
+                    $('#processesTabs .js-carousel').slick('setPosition');
+                }, 200);
+            });
 
 
+        });
 
-                $(window).on('load', function() {
-                    // initialization of HSScrollNav
-                    $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
-                        duration: 700
-                    });
-                });
 
-                $(window).on('resize', function () {
-                    setTimeout(function () {
-                        $.HSCore.components.HSTabs.init('[role="tablist"]');
-                    }, 200);
-                });
-            </script>
+        $(window).on('load', function () {
+            // initialization of HSScrollNav
+            $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
+                duration: 700
+            });
+        });
 
-        <!-- Google Maps -->
-            <script type="text/javascript"
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VZx7pTEJk6GqS4v93d-a9kSgeduiIu4&callback=initMap"></script>
+        $(window).on('resize', function () {
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
+        });
+    </script>
+
+    <!-- Google Maps -->
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VZx7pTEJk6GqS4v93d-a9kSgeduiIu4&callback=initMap"></script>
 
 @endsection

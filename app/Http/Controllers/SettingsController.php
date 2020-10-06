@@ -82,14 +82,7 @@ class SettingsController extends Controller
         $settings->calttitle5 = $request->calttitle5;
         $settings->ctitle6 = $request->ctitle6;
         $settings->calttitle6 = $request->calttitle6;
-        $settings->twitter = $request->twitter;
         $settings->facebook = $request->facebook;
-        $settings->linkedin = $request->linkedin;
-        $settings->gplus = $request->gplus;
-        $settings->youtube = $request->youtube;
-        $settings->pinterest = $request->pinterest;
-        $settings->flickr = $request->flickr;
-        $settings->skype = $request->skype;
         $settings->lat = $request->lat;
         $settings->lng = $request->lng;
         $settings->save();

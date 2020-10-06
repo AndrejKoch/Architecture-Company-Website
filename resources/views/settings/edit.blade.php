@@ -342,136 +342,6 @@
             </div>
         </div>
 
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Twitter</label>
-                        <input type="text" class="form-control @error('twitter') is-invalid @enderror"
-                               name="twitter" value="{{ $settings->twitter }}">
-                        @error('twitter')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('twitter') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Facebook</label>
-                        <input type="text" class="form-control @error('facebook') is-invalid @enderror"
-                               name="facebook" value="{{ $settings->facebook }}">
-                        @error('facebook')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('facebook') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Linkedin</label>
-                        <input type="text" class="form-control @error('linkedin') is-invalid @enderror"
-                               name="linkedin" value="{{ $settings->linkedin }}">
-                        @error('linkedin')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('linkedin') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Google Plus</label>
-                        <input type="text" class="form-control @error('gplus') is-invalid @enderror"
-                               name="gplus" value="{{ $settings->gplus }}">
-                        @error('gplus')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('gplus') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">YouTube</label>
-                        <input type="text" class="form-control @error('youtube') is-invalid @enderror"
-                               name="youtube" value="{{ $settings->youtube }}">
-                        @error('youtube')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('youtube') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Flickr</label>
-                        <input type="text" class="form-control @error('flickr') is-invalid @enderror"
-                               name="flickr" value="{{ $settings->flickr }}">
-                        @error('flickr')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('flickr') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Pinterest</label>
-                        <input type="text" class="form-control @error('pinterest') is-invalid @enderror"
-                               name="pinterest" value="{{ $settings->pinterest }}">
-                        @error('pinterest')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('pinterest') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-
-                <div class="col-md-6">
-                    <div class="form-group bmd-form-group">
-                        <label class="bmd-label-floating">Skype</label>
-                        <input type="text" class="form-control @error('skype') is-invalid @enderror"
-                               name="skype" value="{{ $settings->skype }}">
-                        @error('skype')
-                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('skype') }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -501,6 +371,24 @@
                 </div>
 
 
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                        <label class="bmd-label-floating">Facebook</label>
+                        <input type="text" class="form-control @error('facebook') is-invalid @enderror"
+                               name="facebook" value="{{ $settings->facebook }}">
+                        @error('facebook')
+                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('facebook') }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
             </div>
         </div>
 
