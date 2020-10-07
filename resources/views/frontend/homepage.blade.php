@@ -16,7 +16,6 @@
             @endforeach
         </div>
 
-
         <div class="u-bg-overlay__inner g-absolute-centered w-100">
             <div class="container text-center g-max-width-750">
                 <div class="text-uppercase u-heading-v2-4--bottom u-promo-title g-brd-primary">
@@ -188,70 +187,3 @@
     <!-- End Google (Map) [custom] -->
 
 @endsection
-
-
-
-<script>
-    // initialization of google map
-    function initMap() {
-        $.HSCore.components.HSGMap.init('.js-g-map');
-
-    }
-
-
-    $(document).on('ready', function () {
-        // initialization of carousel
-        $.HSCore.components.HSCarousel.init('.js-carousel');
-
-
-        // initialization of header
-        $.HSCore.components.HSHeader.init($('#js-header'));
-        $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-        // initialization of tabs
-        $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-        // initialization of go to section
-        $.HSCore.components.HSGoTo.init('.js-go-to');
-
-        $('#processes [role="tablist"] .nav-link').on('click', function () {
-            setTimeout(function () {
-                $('#processesTabs .js-carousel').slick('setPosition');
-            }, 200);
-        });
-
-
-    });
-
-
-    $(window).on('load', function () {
-        // initialization of HSScrollNav
-        $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
-            duration: 700
-        });
-    });
-
-    $(window).on('resize', function () {
-        setTimeout(function () {
-            $.HSCore.components.HSTabs.init('[role="tablist"]');
-        }, 200);
-    });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery('#grid-container').cubeportfolio({
-            // options
-        });
-    });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        App.init();
-        StyleSwitcher.initStyleSwitcher();
-    });
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
-        async></script>

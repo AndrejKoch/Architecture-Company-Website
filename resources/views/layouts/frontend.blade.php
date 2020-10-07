@@ -261,7 +261,6 @@
 <script type="text/javascript" src="/frontend/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 <script src="/frontend/cubeportfolio/js/cube-portfolio-3.js"></script>
 <script src="/frontend/cubeportfolio/js/jquery.cubeportfolio.js"></script>
-<script type="text/javascript" src="/frontend/cubeportfolio/js/plugins/style-switcher.js"></script>
 
 <!-- JS Unify -->
 <script src="/frontend/js/hs.core.js"></script>
@@ -334,12 +333,6 @@
     });
 </script>
 
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-        StyleSwitcher.initStyleSwitcher();
-    });
-</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VZx7pTEJk6GqS4v93d-a9kSgeduiIu4&callback=initMap" async></script>
 </body>
