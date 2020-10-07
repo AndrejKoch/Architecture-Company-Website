@@ -1,9 +1,5 @@
 @extends('layouts.frontend')
 
-@section('list')
-    {!! $list !!}
-@endsection
-
 @section('content')
 
     <section id="services" class="g-theme-bg-gray-light-v2 g-py-100">

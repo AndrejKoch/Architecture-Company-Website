@@ -137,15 +137,20 @@
 
 @section('partners')
 
-    <section id="clients" class="g-theme-bg-blue-dark-v1 g-py-80">
+    <section class="g-theme-bg-blue-dark-v1 g-py-80">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 g-mb-40 g-mb-0--lg">
+                <div class="container text-center g-max-width-750 g-mb-70">
+                    <div class="text-uppercase g-brd-primary">
+                        <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle4 }}</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 g-mb-40 g-mb-0--lg">
                     <div class="g-overflow-hidden">
                         <div class="row text-center no-gutters g-ml-minus-1 g-mb-minus-1">
-
-                            @foreach($partners as $partner)
-                                <div class="col-md-3">
+                            @foreach($partners->take(12) as $partner)
+                                <div class="col-md-2">
                                     <div class="g-brd-left g-brd-bottom g-theme-brd-blue-dark-v5 g-py-60">
                                         <img class="img-fluid g-opacity-0_6 g-opacity-1--hover g-transition-0_2"
                                              style="max-height: 100px; max-width: 150px"
@@ -154,42 +159,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 g-py-30 g-py-55--lg">
-                    <div class="js-carousel g-pb-40"
-                         data-infinite="true"
-                         data-pagi-classes="u-carousel-indicators-v1 u-carousel-indicators-dark g-absolute-centered--x g-bottom-0 text-center">
-                        <div class="js-slide">
-                            <img class="g-width-80 g-rounded-50x mx-auto g-mb-20" src="assets/img-temp/400x400/img1.jpg"
-                                 alt="Image description">
-
-                            <div class="text-center">
-                                <p class="g-font-size-default g-color-white-opacity-0_5 g-mb-25">Nullam quis ante. Etiam
-                                    sit amet orci eget eros faucibus tincidunt. Nullam quis ante. Etiam sit amet
-                                    orci.</p>
-                                <h4 class="text-uppercase g-font-weight-700 g-font-size-16 g-color-white g-mb-7">Vanessa
-                                    Igrek</h4>
-                                <h6 class="text-uppercase g-font-size-9 g-color-white-opacity-0_5 mb-0">Gray consultant
-                                    corp</h6>
-                            </div>
-                        </div>
-
-                        <div class="js-slide">
-                            <img class="g-width-80 g-rounded-50x mx-auto g-mb-20" src="assets/img-temp/400x400/img2.jpg"
-                                 alt="Image description">
-
-                            <div class="text-center">
-                                <p class="g-font-size-default g-color-white-opacity-0_5 g-mb-25">Nullam quis ante. Etiam
-                                    sit amet orci eget eros faucibus tincidunt. Nullam quis ante. Etiam sit amet
-                                    orci.</p>
-                                <h4 class="text-uppercase g-font-weight-700 g-font-size-16 g-color-white g-mb-7">Dorian
-                                    Grey</h4>
-                                <h6 class="text-uppercase g-font-size-9 g-color-white-opacity-0_5 mb-0">Gray consultant
-                                    corp</h6>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,13 +190,13 @@
 @endsection
 
 
+
 <script>
     // initialization of google map
     function initMap() {
         $.HSCore.components.HSGMap.init('.js-g-map');
 
     }
-
 
 
     $(document).on('ready', function () {
@@ -255,8 +224,7 @@
     });
 
 
-
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         // initialization of HSScrollNav
         $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
             duration: 700
@@ -271,7 +239,7 @@
 </script>
 
 <script type="text/javascript">
-    jQuery(document).ready( function() {
+    jQuery(document).ready(function () {
         jQuery('#grid-container').cubeportfolio({
             // options
         });
@@ -279,10 +247,11 @@
 </script>
 
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         App.init();
         StyleSwitcher.initStyleSwitcher();
     });
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VZx7pTEJk6GqS4v93d-a9kSgeduiIu4&callback=initMap" async></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+        async></script>

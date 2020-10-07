@@ -31,7 +31,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('dashboard');
 Route::get('/project/{project_slug}', 'FrontEndController@project')->name('project.index');
+Route::get('/projects', 'FrontEndController@projects');
 Route::get('/category/{category_slug}', 'FrontEndController@category');
+Route::get('/categories-all', 'FrontEndController@categories');
 Route::get('/service', 'FrontEndController@service');
 Route::post('/send-message', 'EmailController@sendContact');
 

@@ -60,6 +60,7 @@
                     <div class="collapse navbar-collapse align-items-center flex-sm-row" id="navBar" data-mobile-scroll-hide="true">
                         <ul class="js-scroll-nav navbar-nav align-items-lg-center text-uppercase g-font-weight-700 g-letter-spacing-1 g-font-size-12 g-pt-20 g-pt-0--lg mx-auto"
                             data-splitted-breakpoint="992">
+
                             <li class="nav-item g-mr-30--lg g-mb-7 g-mb-0--lg">
                                 <a href="/" class="nav-link p-0">Home</a>
                             </li>
@@ -86,11 +87,11 @@
                             </li>
                             <!-- End Logo -->
 
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg">
-                                <a href="#projects" class="nav-link p-0">Projects</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects') ? 'active' : ''}}">
+                                <a href="{{ url('projects') }}" class="nav-link p-0">Projects</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg">
-                                <a href="#clients" class="nav-link p-0">Clients</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all') ? 'active' : ''}}">
+                                <a href="{{ url('categories-all') }}" class="nav-link p-0">Categories</a>
                             </li>
                             <li class="nav-item g-ml-30--lg">
                                 <a href="#contact" class="nav-link p-0">Contact</a>
@@ -220,24 +221,12 @@
 
         <div class="text-center g-color-gray-dark-v5 g-theme-bg-blue-dark-v1 g-py-70">
             <a class="d-block g-width-140 mx-auto g-mb-30" href="/">
-                <img class="img-fluid" src="assets/img/logo-light.png" alt="Image description">
+                <img class="img-fluid" src="/assets/img/logo/originals/{{ $settings->logo }}" style="height: 64px;" alt="Image description">
             </a>
 
             <ul class="list-inline d-inline-block mb-0">
                 <li class="list-inline-item g-mr-10">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li class="list-inline-item g-mr-10">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#"><i class="fa fa-pinterest"></i></a>
-                </li>
-                <li class="list-inline-item g-mr-10">
                     <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="#"><i class="fa fa-linkedin"></i></a>
                 </li>
             </ul>
         </div>

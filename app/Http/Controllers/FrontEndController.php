@@ -47,6 +47,26 @@ class FrontEndController extends Controller
         return view('frontend.projects')->with($data);
     }
 
+    public function projects(){
+        $projects = Projects::all();
+        $settings = Settings::Find(1);
+
+
+        $data = ["settings" => $settings, "projects" => $projects];
+        return view('frontend.projectss')->with($data);
+    }
+
+    public function categories(){
+        $category = Categories::all();
+        $settings = Settings::Find(1);
+        $projects = Projects::all();
+        $list = Categories::getList();
+
+
+        $data = ["settings" => $settings, "category" => $category, "projects" => $projects, "list" => $list];
+        return view('frontend.categories')->with($data);
+    }
+
     public function category($category_slug){
         $category = Categories::where('slug','=',$category_slug)->first();
         $projects = Projects::where('category_id', '=',$category->id)->get();
