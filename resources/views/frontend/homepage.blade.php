@@ -185,5 +185,4 @@
              data-pin-icon="assets/img/pin.png"></div>
     </div>
     <!-- End Google (Map) [custom] -->
-
 @endsection
