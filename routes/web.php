@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', 'FrontEndController@index'); {
-
+Route::group(['middleware' => ['web', 'auth', 'check.user:Admin']], function () {
+    {
+    Route::get('/home', 'HomeController@index')->name('dashboard');
     Route::resource('/user', 'UserController');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/static_page', 'StaticPageController');
@@ -24,17 +26,16 @@ Route::get('/', 'FrontEndController@index'); {
     Route::resource('/partners','PartnersController');
     Route::resource('/gallery','GalleryController');
     Route::resource('/settings','SettingsController');
+    }
+});
 
-};
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('dashboard');
+Route::get('/', 'FrontEndController@index');
 Route::get('/project/{project_slug}', 'FrontEndController@project')->name('project.index');
 Route::get('/projects', 'FrontEndController@projects');
 Route::get('/category/{category_slug}', 'FrontEndController@category');
 Route::get('/categories-all', 'FrontEndController@categories');
 Route::get('/service', 'FrontEndController@service');
 Route::post('/send-message', 'EmailController@sendContact');
+
 
 

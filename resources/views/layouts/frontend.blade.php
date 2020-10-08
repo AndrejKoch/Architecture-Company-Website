@@ -61,14 +61,14 @@
                         <ul class="js-scroll-nav navbar-nav align-items-lg-center text-uppercase g-font-weight-700 g-letter-spacing-1 g-font-size-12 g-pt-20 g-pt-0--lg mx-auto"
                             data-splitted-breakpoint="992">
 
-                            <li class="nav-item g-mr-30--lg g-mb-7 g-mb-0--lg">
-                                <a href="/" class="nav-link p-0">Home</a>
+                            <li class="nav-item g-mr-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/') ? 'active' : ''}}">
+                                <a href="{{ url('/') }}" class="mybutton nav-link p-0">Home</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg">
-                                <a href="#about" class="nav-link p-0">About</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#about') ? 'active' : ''}}">
+                                <a href="{{ url('/#about') }}" class="mybutton nav-link p-0">About</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg">
-                                <a href="#services" class="nav-link p-0">Services</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#services') ? 'active' : ''}}">
+                                <a href="{{ url('/#services') }}" class="mybutton nav-link p-0">Services</a>
                             </li>
 
 
@@ -88,13 +88,13 @@
                             <!-- End Logo -->
 
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects') ? 'active' : ''}}">
-                                <a href="{{ url('projects') }}" class="nav-link p-0">Projects</a>
+                                <a href="{{ url('projects') }}" class="mybutton nav-link p-0">Projects</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all') ? 'active' : ''}}">
-                                <a href="{{ url('categories-all') }}" class="nav-link p-0">Categories</a>
+                                <a href="{{ url('categories-all') }}" class="mybutton nav-link p-0">Categories</a>
                             </li>
-                            <li class="nav-item g-ml-30--lg">
-                                <a href="#contact" class="nav-link p-0">Contact</a>
+                            <li class="nav-item g-ml-30--lg {{ request()->is('/#contact') ? 'active' : ''}}">
+                                <a href="#contact" class="mybutton nav-link p-0">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -271,6 +271,7 @@
 <script src="/frontend/js/hs.carousel.js"></script>
 <script src="/frontend/js/hs.map.js"></script>
 <script src="/frontend/js/hs.go-to.js"></script>
+<script src="/frontend/js/custom.js"></script>
 
 
 

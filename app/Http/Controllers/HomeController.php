@@ -29,8 +29,5 @@ class HomeController extends Controller
 
     }
 
-    public function test($slug)
-    {
-        dd($slug);
-    }
+
 }
