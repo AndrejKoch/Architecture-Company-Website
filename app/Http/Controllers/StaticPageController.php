@@ -66,6 +66,7 @@ class StaticPageController extends Controller
         $static_page->image = $image;
         $static_page->slug = $slug;
         $static_page->link = $request->link;
+        $static_page->icon = $request->icon;
         $static_page->save();
 
         Session::flash('flash_message', 'Page successfully created!');

@@ -44,8 +44,8 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="g-bg-img-hero"
                              style="background-image: url('/assets/img/static_page/medium/{{$staticpage->image}}');">
-                            <div
-                                class="g-theme-bg-blue-dark-v3 g-opacity-1 g-opacity-0_8--hover g-py-50 g-px-15 g-pa-100-30--sm g-transition-0_2 g-transition--ease-in">
+                            <div class="g-theme-bg-blue-dark-v3 g-opacity-1 g-opacity-0_8--hover g-py-50 g-px-15 g-pa-100-30--sm g-transition-0_2 g-transition--ease-in">
+                                <span aria-hidden="true" style="font-size: 30px;color: #c74645;" class="{{$staticpage->icon}} icon"></span>
                                 <h3 class="text-uppercase g-line-height-1_2 g-font-weight-700 g-color-white g-mb-25">{{$staticpage->title}}</h3>
                                 <p class="g-font-size-13 g-color-white-opacity-0_7 g-mb-30">{!!  Str::limit($staticpage->description, 350) !!}</p>
                                 <a href="#"

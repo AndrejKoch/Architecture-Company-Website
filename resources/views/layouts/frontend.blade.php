@@ -87,10 +87,10 @@
                             </li>
                             <!-- End Logo -->
 
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects') ? 'active' : ''}}">
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects', 'project*') ? 'active' : ''}}">
                                 <a href="{{ url('projects') }}" class="mybutton nav-link p-0">Projects</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all') ? 'active' : ''}}">
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all','category*') ? 'active' : ''}}">
                                 <a href="{{ url('categories-all') }}" class="mybutton nav-link p-0">Categories</a>
                             </li>
                             <li class="nav-item g-ml-30--lg {{ request()->is('/#contact') ? 'active' : ''}}">

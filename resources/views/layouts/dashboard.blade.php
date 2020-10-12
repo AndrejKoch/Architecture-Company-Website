@@ -34,22 +34,22 @@
 
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link" href="/home">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
                         <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
+                        <p>Homepage</p>
                     </a>
                 </li>
 
 
-                <li class="nav-item ">
+                <li class="nav-item  {{ request()->is('user*') ? 'active' : ''}}">
                     <a class="nav-link" href="/user">
                         <i class="material-icons">person</i>
                         <p>Users</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('settings*') ? 'active' : ''}}">
                     <a class="nav-link" href="/settings">
                         <i class="material-icons">settings</i>
                         <p>Settings</p>
@@ -57,49 +57,49 @@
                 </li>
 
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('categories*') ? 'active' : ''}}">
                     <a class="nav-link" href="/categories">
                         <i class="material-icons">content_paste</i>
                         <p>Categories</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('static_page*') ? 'active' : ''}}">
                     <a class="nav-link" href="/static_page">
                         <i class="material-icons">pageview</i>
                         <p>About us</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('services*') ? 'active' : ''}}">
                     <a class="nav-link" href="/services">
                         <i class="material-icons">build</i>
                         <p>Services</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('slider*') ? 'active' : ''}}">
                     <a class="nav-link" href="/slider">
                         <i class="material-icons">slideshow</i>
                         <p>Slider</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('projects*') ? 'active' : ''}}">
                     <a class="nav-link" href="/projects">
                         <i class="material-icons">storage</i>
                         <p>Projects</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('partners*') ? 'active' : ''}}">
                     <a class="nav-link" href="/partners">
                         <i class="material-icons">people</i>
                         <p>Partners</p>
                     </a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item {{ request()->is('gallery*') ? 'active' : ''}}">
                     <a class="nav-link" href="/gallery">
                         <i class="material-icons">collections</i>
                         <p>Gallery</p>

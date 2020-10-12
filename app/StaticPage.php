@@ -13,7 +13,8 @@ class StaticPage extends Model
         'description',
         'image',
         'slug',
-        'link'
+        'link',
+        'icon'
     ];
 
 }

@@ -82,6 +82,8 @@
 
 
 
+
+
                 @if($errors->has('image'))
                     <span style="color: red">{{ $errors->first('image') }}</span>
                 @endif

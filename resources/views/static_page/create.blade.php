@@ -56,6 +56,21 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating">Icon</label>
+                            <input type="text" class="form-control @error('icon') is-invalid @enderror"
+                                   name="icon" value="{{ old('icon') }}">
+                            @error('icon')
+                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('icon') }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
 
 
                 <div class="row">

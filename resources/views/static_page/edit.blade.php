@@ -87,6 +87,21 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Icon</label>
+                                <input type="text" class="form-control @error('icon') is-invalid @enderror"
+                                       name="icon" value="{{ $static_page->icon }}">
+                                @error('icon')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('icon') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
                     @if($errors->has('image'))
                         <span style="color: red">{{ $errors->first('image') }}</span>
                     @endif

@@ -39,6 +39,9 @@
                                     Image
                                 </th>
                                 <th>
+                                    Icon
+                                </th>
+                                <th>
                                     Action
                                 </th>
                             </tr>
@@ -51,6 +54,7 @@
                                     <td>{!! $static_page->description !!}</td>
                                     <td>{!! $static_page->link !!}</td>
                                     <td><img src="/assets/img/static_page/thumbnails/{{$static_page->image}}" class="img-fluid"></td>
+                                    <td>{!! $static_page->icon!!}</td>
 
                                     <td>
 
