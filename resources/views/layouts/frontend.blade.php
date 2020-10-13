@@ -20,12 +20,17 @@
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
 
     <!-- CSS Implementing Plugins -->
+
+
     <link rel="stylesheet" href="/frontend/css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/frontend/css/simple-line-icons.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/hamburgers.min.css">
     <link rel="stylesheet" href="/frontend/css/animate.css">
     <link rel="stylesheet" href="/frontend/css/slick.css">
+    <link rel="stylesheet" href="/frontend/css/blocks.css">
+    <link rel="stylesheet" href="/frontend/css/app.css">
+    <link rel="stylesheet" href="/frontend/css/parallax-slider.css">
 
     <link rel="stylesheet" href="/frontend/cubeportfolio/css/cubeportfolio.min.css">
     <link rel="stylesheet" href="/frontend/cubeportfolio/custom/custom-cubeportfolio.css">
@@ -64,8 +69,8 @@
                             <li class="nav-item g-mr-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/') ? 'active' : ''}}">
                                 <a href="{{ url('/') }}" class="mybutton nav-link p-0">Home</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#about') ? 'active' : ''}}">
-                                <a href="{{ url('/#about') }}" class="mybutton nav-link p-0">About</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('about-us') ? 'active' : ''}}">
+                                <a href="{{ url('/about-us') }}" class="mybutton nav-link p-0">About</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#services') ? 'active' : ''}}">
                                 <a href="{{ url('/#services') }}" class="mybutton nav-link p-0">Services</a>
@@ -272,17 +277,37 @@
 <script src="/frontend/js/hs.map.js"></script>
 <script src="/frontend/js/hs.go-to.js"></script>
 <script src="/frontend/js/custom.js"></script>
+<script src="/frontend/js/progress-bar.js"></script>
+<script src="/frontend/js/jquery.counterup.min.js"></script>
+<script src="/frontend/js/waypoints.min.js"></script>
+<script src="/frontend/js/parallax.min.js"></script>
+
 
 
 
 <!-- JS Customization -->
 
+
 <!-- JS Plugins Init. -->
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initCounter();
+        App.initParallaxBg();
+        OwlCarousel.initOwlCarousel();
+        StyleSwitcher.initStyleSwitcher();
+        ProgressBar.initProgressBarVertical();
+    });
+</script>
+
 <script>
     // initialization of google map
     function initMap() {
         $.HSCore.components.HSGMap.init('.js-g-map');
     }
+
+
 
 
 
@@ -322,6 +347,15 @@
         setTimeout(function () {
             $.HSCore.components.HSTabs.init('[role="tablist"]');
         }, 200);
+    });
+</script>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 6000
+        });
     });
 </script>
 

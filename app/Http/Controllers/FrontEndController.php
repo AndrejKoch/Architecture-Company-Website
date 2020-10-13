@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
+use App\Counter;
 use App\Partners;
 use App\Projects;
 use App\Services;
@@ -10,6 +11,7 @@ use App\Slider;
 use App\StaticPage;
 use App\Gallery;
 use App\Settings;
+use App\Team;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -24,7 +26,6 @@ class FrontEndController extends Controller
         $category = Categories::all();
         $list = Categories::getList();
         $settings = Settings::Find(1);
-
 
 
         $data = ['settings' => $settings, 'list' => $list, 'category' => $category, 'services' => $services, 'sliders' => $sliders, 'projects' => $projects, 'partners' => $partners, 'staticpage' => $staticPages];
@@ -80,12 +81,14 @@ class FrontEndController extends Controller
 
     }
 
-    public function service(){
-        $services = Services::all();
+    public function about(){
+        $staticPages = StaticPage::all();
         $settings = Settings::Find(1);
+        $team = Team::all();
+        $counter = Counter::all();
 
-        $data = ["services" => $services, "settings" => $settings];
-        return view('frontend.service')->with($data);
+        $data = ['counter'=> $counter,'team'=> $team, "staticPages" => $staticPages, "settings" => $settings];
+        return view('frontend.aboutus')->with($data);
 
     }
 

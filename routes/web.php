@@ -26,6 +26,8 @@ Route::group(['middleware' => ['web', 'auth', 'check.user:Admin']], function () 
     Route::resource('/partners','PartnersController');
     Route::resource('/gallery','GalleryController');
     Route::resource('/settings','SettingsController');
+    Route::resource('/team','TeamController');
+    Route::resource('/counter','CounterController');
     }
 });
 
@@ -34,7 +36,7 @@ Route::get('/project/{project_slug}', 'FrontEndController@project')->name('proje
 Route::get('/projects', 'FrontEndController@projects');
 Route::get('/category/{category_slug}', 'FrontEndController@category');
 Route::get('/categories-all', 'FrontEndController@categories');
-Route::get('/service', 'FrontEndController@service');
+Route::get('/about-us', 'FrontEndController@about');
 Route::post('/send-message', 'EmailController@sendContact');
 
 

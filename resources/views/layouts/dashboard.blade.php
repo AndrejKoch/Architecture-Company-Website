@@ -106,6 +106,20 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{ request()->is('team*') ? 'active' : ''}}">
+                    <a class="nav-link" href="/team">
+                        <i class="material-icons">groups</i>
+                        <p>Team</p>
+                    </a>
+                </li>
+
+                <li class="nav-item {{ request()->is('counter*') ? 'active' : ''}}">
+                    <a class="nav-link" href="/counter">
+                        <i class="material-icons">alarm_add</i>
+                        <p>Counters</p>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
