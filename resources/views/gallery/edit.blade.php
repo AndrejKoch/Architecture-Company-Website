@@ -62,6 +62,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
+                            <p>Select project</p>
                             <select type="text" class="form-control @error('project_id') is-invalid @enderror"
                                     name="project_id">
                                 <option></option>
@@ -79,6 +80,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
+                            <p>Select service</p>
                             <select type="text" class="form-control @error('service_id') is-invalid @enderror"
                                     name="service_id">
                                 <option></option>
