@@ -24,11 +24,10 @@ class FrontEndController extends Controller
         $partners = Partners::all();
         $staticPages = StaticPage::all();
         $category = Categories::all();
-        $list = Categories::getList();
         $settings = Settings::Find(1);
 
 
-        $data = ['settings' => $settings, 'list' => $list, 'category' => $category, 'services' => $services, 'sliders' => $sliders, 'projects' => $projects, 'partners' => $partners, 'staticpage' => $staticPages];
+        $data = ['settings' => $settings, 'category' => $category, 'services' => $services, 'sliders' => $sliders, 'projects' => $projects, 'partners' => $partners, 'staticpage' => $staticPages];
 
 
         return view('frontend.homepage')->with($data);
@@ -39,13 +38,23 @@ class FrontEndController extends Controller
     public function project($project_slug)
     {
         $project = Projects::where('slug','=',$project_slug)->first();
-        $list = Categories::getList();
         $gallery = Gallery::where('project_id', '=', $project->id)->get();
         $settings = Settings::Find(1);
 
 
-        $data = ["settings" => $settings, "project" => $project, "list" => $list, "gallery" => $gallery];
+        $data = ["settings" => $settings, "project" => $project, "gallery" => $gallery];
         return view('frontend.projects')->with($data);
+    }
+
+    public function services($service_slug)
+    {
+        $services = Services::where('slug','=',$service_slug)->first();
+        $gallery = Gallery::where('service_id', '=', $services->id)->get();
+        $settings = Settings::Find(1);
+
+
+        $data = ["settings" => $settings, "services" => $services, 'gallery' => $gallery];
+        return view('frontend.adssingle')->with($data);
     }
 
     public function projects(){
@@ -61,22 +70,20 @@ class FrontEndController extends Controller
         $category = Categories::all();
         $settings = Settings::Find(1);
         $projects = Projects::all();
-        $list = Categories::getList();
 
 
-        $data = ["settings" => $settings, "category" => $category, "projects" => $projects, "list" => $list];
+        $data = ["settings" => $settings, "category" => $category, "projects" => $projects];
         return view('frontend.categories')->with($data);
     }
 
     public function category($category_slug){
         $category = Categories::where('slug','=',$category_slug)->first();
         $projects = Projects::where('category_id', '=',$category->id)->get();
-        $list = Categories::getList();
         $settings = Settings::Find(1);
 
 
 
-        $data = ["settings" => $settings, "projects" => $projects, "category" => $category, "list" => $list];
+        $data = ["settings" => $settings, "projects" => $projects, "category" => $category,];
         return view('frontend.category')->with($data);
 
     }

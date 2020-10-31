@@ -44,8 +44,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="g-bg-img-hero"
                              style="background-image: url('/assets/img/static_page/medium/{{$staticpage->image}}');">
-                            <div class="g-theme-bg-blue-dark-v3 g-opacity-1 g-opacity-0_8--hover g-py-50 g-px-15 g-pa-100-30--sm g-transition-0_2 g-transition--ease-in">
-                                <span aria-hidden="true" style="font-size: 30px;color: #c74645;" class="{{$staticpage->icon}} icon"></span>
+                            <div
+                                class="g-theme-bg-blue-dark-v3 g-opacity-1 g-opacity-0_8--hover g-py-50 g-px-15 g-pa-100-30--sm g-transition-0_2 g-transition--ease-in">
+                                <span aria-hidden="true" style="font-size: 30px;color: #c74645;"
+                                      class="{{$staticpage->icon}} icon"></span>
                                 <h3 class="text-uppercase g-line-height-1_2 g-font-weight-700 g-color-white g-mb-25">{{$staticpage->title}}</h3>
                                 <p class="g-font-size-13 g-color-white-opacity-0_7 g-mb-30">{!!  Str::limit($staticpage->description, 280) !!}</p>
                                 <a href="/about-us#readmore"
@@ -62,7 +64,7 @@
 @endsection
 
 @section('services')
-    <section id="services" class="g-theme-bg-blue-dark-v1 g-py-100">
+    <section id="services" class="g-theme-bg-blue-dark-v3 g-py-100">
         <div class="container text-center g-max-width-750 g-mb-70">
             <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary g-mb-30">
                 <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25"> {{ $settings->ctitle2 }} </h3>
@@ -70,31 +72,69 @@
             </div>
         </div>
 
-        <div class="container">
-            <!-- Carousel -->
-            <div class="js-carousel"
-                 data-infinite="true"
-                 data-arrows-classes="u-arrow-v1 g-pos-abs g-top-35x g-width-45 g-height-45 g-color-white g-theme-bg-blue-dark-v2 g-bg-primary--hover g-rounded-50x g-transition-0_2 g-transition--ease-in"
-                 data-arrow-left-classes="fa fa-chevron-left g-left-0"
-                 data-arrow-right-classes="fa fa-chevron-right g-right-0">
-                @foreach($services as $services)
+        <div class="col-md-12">
+            <!-- Thumbnails v1 -->
+            <div class="row">
+                @foreach($services as $service)
+                    <div class="col-md-4">
+                        <div class="thumbnails thumbnail-style">
+                            <div class="thumbnail-img">
+                                <div class="overflow-hidden">
+                                    <a href="/ads-single/{{$service->slug}}">
+                                        <img class="img-responsive"
+                                             style="width: 100%; max-height: 220px; object-fit: cover;"
+                                             src="assets/img/services/thumbnails/{{$service->image}}" alt=""/>
+                                    </a>
+                                </div>
+                                <a class="btn-more hover-effect"
+                                   href="/ads-single/{{$service->slug}}">{{ $service->link }}</a>
+                            </div>
+                            <div class="caption text-center" style="margin-left: 2%; margin-bottom: 5%;">
+                                <h4><a class="g-color-white hover-effect" href="/ads-single/{{$service->slug}}">{{$service->name}}</a>
+                                </h4>
+                            </div>
+                            <div class="container" style="text-align: center;">
 
-                    <div class="js-slide">
-                        <div class="container text-center g-max-width-600 g-mb-30">
-                            <img class="img-fluid d-inline-block"
-                                 src="assets/img/services/originals/{{$services->image}}" alt="Image description">
-                        </div>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item margin-left-10">
+                                        <i class="material-icons margin-left-10" style="color: #c74645;">grid_on</i>
+                                    </li>
+                                    <li class="list-inline-item margin-left-10">
+                                        <p class="color-light">{{$service->size}}</p>
+                                    </li>
+                                    <li class="list-inline-item margin-left-10">
+                                        <i class="material-icons margin-left-10" style="color: #c74645;">local_hotel</i>
+                                    </li>
+                                    <li class="list-inline-item margin-left-10">
+                                        <p class="color-light"> {{ $service->bedrooms }}</p>
+                                    </li>
+                                    <li class="list-inline-item margin-left-10">
+                                        <i class="material-icons margin-left-10" style="color: #c74645;">bathtub</i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p class="color-light"> {{ $service->toilets }}</p>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <i class="material-icons" style="color: #c74645;">euro_symbol</i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p class="color-light"> {{ $service->price }}</p>
+                                    </li>
+                                </ul>
 
-                        <div class="container text-center g-max-width-550">
-                            <h4 class="h6 text-uppercase g-font-weight-700 g-color-white g-mb-20">{{$services->name}}</h4>
-                            <p class="g-font-size-default g-color-white-opacity-0_8 g-mb-40">{!!  Str::limit($services->description, 300) !!}</p>
-                            <a href="#"
-                               class="text-uppercase g-font-weight-700 g-font-size-11 g-text-underline--none--hover">{{$services->link}}</a>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <i class="material-icons" style="color: #c74645;">room</i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <p class="color-light"> {{ $service->location }}</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-            <!-- End Carousel -->
         </div>
     </section>
 @endsection

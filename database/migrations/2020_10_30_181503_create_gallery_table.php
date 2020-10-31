@@ -17,8 +17,10 @@ class CreateGalleryTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('image');
-            $table->bigInteger('project_id')->unsigned();
+            $table->bigInteger('project_id')->unsigned()->nullable();
             $table->foreign('project_id')->references('id')->on('projects');
+            $table->bigInteger('service_id')->unsigned()->nullable();
+            $table->foreign('service_id')->references('id')->on('services');
             $table->timestamps();
         });
     }

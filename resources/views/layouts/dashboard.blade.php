@@ -73,8 +73,8 @@
 
                 <li class="nav-item {{ request()->is('services*') ? 'active' : ''}}">
                     <a class="nav-link" href="/services">
-                        <i class="material-icons">build</i>
-                        <p>Services</p>
+                        <i class="material-icons">cast</i>
+                        <p>Advertisement</p>
                     </a>
                 </li>
 

@@ -33,7 +33,8 @@ Route::group(['middleware' => ['web', 'auth', 'check.user:Admin']], function () 
 
 Route::get('/', 'FrontEndController@index');
 Route::get('/project/{project_slug}', 'FrontEndController@project')->name('project.index');
-Route::get('/projects', 'FrontEndController@projects');
+Route::get('/ads-single/{service_slug}', 'FrontEndController@services')->name('adssingle.index');
+Route::get('/projects-all', 'FrontEndController@projects');
 Route::get('/category/{category_slug}', 'FrontEndController@category');
 Route::get('/categories-all', 'FrontEndController@categories');
 Route::get('/about-us', 'FrontEndController@about');

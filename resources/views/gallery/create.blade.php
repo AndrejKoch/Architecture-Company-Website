@@ -55,9 +55,11 @@
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
 
+                            <p>Select project</p>
                             <select class="form-control @error('project_id') is-invalid @enderror" name="project_id">
                                 @if($projects)
-                                    @foreach($projects as $project)
+                                    <option></option>
+                                @foreach($projects as $project)
                                         <option value="{{ $project['id']}}">{{ $project['name'] }}</option>
                                     @endforeach
                                 @endif
@@ -68,7 +70,29 @@
                                     </span>
                             @enderror
                         </div>
+                    </div>
+                </div>
 
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                            <p>Select service</p>
+
+                            <select class="form-control @error('service_id') is-invalid @enderror" name="service_id">
+                                @if($services)
+                                    <option></option>
+                                @foreach($services as $service)
+                                        <option value="{{ $service['id']}}">{{ $service['name'] }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('service_id') }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
                     </div>
                 </div>
 

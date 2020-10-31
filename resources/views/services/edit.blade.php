@@ -60,9 +60,82 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Location</label>
+                                <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                       name="location" value="{{ $services->location }}">
+                                @error('location')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('location') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Price</label>
+                                <input type="text" class="form-control @error('price') is-invalid @enderror"
+                                       name="price" value="{{ $services->price }}">
+                                @error('price')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('price') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Size</label>
+                                <input type="text" class="form-control @error('size') is-invalid @enderror"
+                                       name="size" value="{{ $services->size }}">
+                                @error('size')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('size') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Bedrooms</label>
+                                <input type="text" class="form-control @error('bedrooms') is-invalid @enderror"
+                                       name="bedrooms" value="{{ $services->bedrooms }}">
+                                @error('bedrooms')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('bedrooms') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Toilets</label>
+                                <input type="text" class="form-control @error('toilets') is-invalid @enderror"
+                                       name="toilets" value="{{ $services->toilets }}">
+                                @error('toilets')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('toilets') }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row">

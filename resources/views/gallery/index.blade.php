@@ -29,6 +29,7 @@
                                 <td>Image</td>
                                 <td>Name</td>
                                 <td>Project Name</td>
+                                <td>Service Name</td>
                                 <td>Action</td>
                             </tr>
 
@@ -37,7 +38,16 @@
                                     <td>{{ $gallery->id }}</td>
                                     <td><img src="/assets/img/gallery/thumbnails/{{$gallery->image}}" class="img-fluid"></td>
                                     <td>{{ $gallery->name }}</td>
-                                    <td>{{ $gallery->getProject->name }}</td>
+                                    <td>@if($gallery->project_id != NULL)
+                                            {{ $gallery->getProject->name }}
+                                        @else
+                                            n/a
+                                        @endif</td>
+                                    <td>@if($gallery->service_id != NULL)
+                                        {{ $gallery->getServices->name }}
+                                    @else
+                                        n/a
+                                        @endif</td>
 
                                     <td>
                                         <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/gallery', [$gallery->id, 'edit']) }}">Edit</a>

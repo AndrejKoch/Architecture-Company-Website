@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services;
+use App\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -58,9 +59,13 @@ class ServicesController extends Controller
         $name = $request->name;
         $link = $request->link;
         $description = $request->description;
+        $location = $request->location;
+        $price = $request->price;
+        $size = $request->size;
+        $bedrooms = $request->bedrooms;
+        $toilets = $request->toilets;
         $slug = Str::slug($request->get('name'), '-');
         $image = $this->imageStore($request);
-
 
         $services = new Services();
         $services->name = $name;
@@ -68,6 +73,11 @@ class ServicesController extends Controller
         $services->description = $description;
         $services->image = $image;
         $services->slug = $slug;
+        $services->location = $location;
+        $services->size = $size;
+        $services->price = $price;
+        $services->bedrooms = $bedrooms;
+        $services->toilets = $toilets;
         $services->save();
 
         Session::flash('flash_message', 'Service successfully created!');
@@ -132,8 +142,11 @@ class ServicesController extends Controller
     public function destroy($id)
     {
         $services = Services::FindOrFail($id);
+        $gallery = Gallery::where('service_id', '=', $services->id)->get();
 
-
+        foreach($gallery as $g)  {
+            $g->delete();
+        }
 
         unlink(public_path().'/assets/img/services/medium/'.$services->image);
         unlink(public_path().'/assets/img/services/originals/'.$services->image);

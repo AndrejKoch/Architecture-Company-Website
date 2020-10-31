@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use App\Projects;
+use App\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -22,7 +23,8 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::all();
         $projects = Projects::all();
-        $data = ["gallery" => $gallery, 'projects' => $projects];
+        $services = Services::all();
+        $data = ["gallery" => $gallery, 'projects' => $projects, 'services' => $services];
         return view('gallery.index')->with($data);
     }
 
@@ -35,7 +37,8 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::all();
         $projects = Projects::all();
-        $data = ['gallery' => $gallery, 'projects' => $projects];
+        $services = Services::all();
+        $data = ["gallery" => $gallery, 'projects' => $projects, 'services' => $services];
         return view('gallery.create')->with($data);
     }
 
@@ -50,7 +53,6 @@ class GalleryController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'image' => 'required',
-            'project_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -66,6 +68,7 @@ class GalleryController extends Controller
         $gallery->name = $request->name;
         $gallery->image = $image;
         $gallery->project_id = $request->project_id;
+        $gallery->service_id = $request->service_id;
         $gallery->save();
 
         Session::flash('flash_message', 'Gallery image successfully created!');
@@ -93,8 +96,8 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::FindOrFail($id);
         $projects = Projects::all();
-        $data = ["gallery" => $gallery, "projects" => $projects];
-
+        $services = Services::all();
+        $data = ["gallery" => $gallery, 'projects' => $projects, 'services' => $services];
         return view('gallery.edit')->with($data);
     }
 

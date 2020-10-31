@@ -9,6 +9,11 @@ class Services extends Model
     protected $table = 'services';
 
     protected $fillable = [
-        'name','image','slug','description','link'
+        'name','image','slug','description','link','location','price','size','bedrooms','toilets'
     ];
+
+    public function gallery()
+    {
+        return $this->hasMany('App\Gallery','service_id','id');
+    }
 }

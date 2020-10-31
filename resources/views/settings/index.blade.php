@@ -40,7 +40,7 @@
                                     @else
                                         n/a
                                     @endif
-                                @endforeach
+                                @endforeachc
                         </div>
                     </div>
                 </div>

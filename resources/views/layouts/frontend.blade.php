@@ -13,6 +13,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
     <!-- Google Fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:300,400,500,700,900" rel="stylesheet">
 
@@ -72,8 +75,8 @@
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('about-us') ? 'active' : ''}}">
                                 <a href="{{ url('/about-us') }}" class="mybutton nav-link p-0">About</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#services') ? 'active' : ''}}">
-                                <a href="{{ url('/#services') }}" class="mybutton nav-link p-0">Services</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#services', 'ads-single*') ? 'active' : ''}}">
+                                <a href="{{ url('/#services') }}" class="mybutton nav-link p-0">Ads</a>
                             </li>
 
 
@@ -93,7 +96,7 @@
                             <!-- End Logo -->
 
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects', 'project*') ? 'active' : ''}}">
-                                <a href="{{ url('projects') }}" class="mybutton nav-link p-0">Projects</a>
+                                <a href="{{ url('projects-all') }}" class="mybutton nav-link p-0">Projects</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all','category*') ? 'active' : ''}}">
                                 <a href="{{ url('categories-all') }}" class="mybutton nav-link p-0">Categories</a>

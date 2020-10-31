@@ -36,6 +36,21 @@
                                     Link
                                 </th>
                                 <th>
+                                    Location
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Size
+                                </th>
+                                <th>
+                                    Bedrooms
+                                </th>
+                                <th>
+                                    Toilets
+                                </th>
+                                <th>
                                     Image
                                 </th>
                                 <th>
@@ -50,6 +65,11 @@
                                     <td>{{ $services->name }}</td>
                                     <td>{!! Str::limit($services->description, 50) !!}</td>
                                     <td>{{ $services->link }}</td>
+                                    <td>{{ $services->location }}</td>
+                                    <td>{{ $services->price }}</td>
+                                    <td>{{ $services->size }}</td>
+                                    <td>{{ $services->bedrooms }}</td>
+                                    <td>{{ $services->toilets }}</td>
                                     <td><img src="/assets/img/services/thumbnails/{{$services->image}}" class="img-fluid"></td>
 
                                     <td>

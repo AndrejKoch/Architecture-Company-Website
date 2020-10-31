@@ -28,9 +28,7 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
-
                     </div>
 
                     <div class="row">
@@ -66,13 +64,31 @@
                         <div class="form-group bmd-form-group">
                             <select type="text" class="form-control @error('project_id') is-invalid @enderror"
                                     name="project_id">
-                                @foreach($projects as $project)
+                                <option></option>
+                            @foreach($projects as $project)
                                     <option value="{{ $project->id }}" @if($gallery->project_id == $project->id) selected @endif>{{ $project->name }}</option>
                                 @endforeach
                             </select>
                             @error('project_id')
                             <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('project_id') }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                            <select type="text" class="form-control @error('service_id') is-invalid @enderror"
+                                    name="service_id">
+                                <option></option>
+                            @foreach($services as $service)
+                                    <option value="{{ $service->id }}" @if($gallery->service_id == $service->id) selected @endif>{{ $service->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('service_id')
+                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('service_id') }}</strong>
                                     </span>
                             @enderror
                         </div>

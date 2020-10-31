@@ -8,25 +8,26 @@
     <section id="projects" class="g-theme-bg-gray-light-v2 g-py-100">
         <div class="cube-portfolio container margin-bot-60">
             <div id="grid-container" class="cbp-l-grid-agency">
-                @foreach ($gallery as $gallery)
-                    <div class="cbp-item graphic">
-                        <div class="cbp-caption">
-                            <div class="cbp-caption-defaultWrap">
-                                <img src="/assets/img/gallery/thumbnails/{{$gallery->image}}" alt="">
-                            </div>
-                            <div class="cbp-caption-activeWrap">
-                                <div class="cbp-l-caption-alignCenter">
-                                    <div class="cbp-l-caption-body">
-                                        <ul class="link-captions">
-                                            <li><a href="/assets/img/gallery/originals/{{$gallery->image}}"
-                                                   class="cbp-lightbox"><i
-                                                        class="rounded-x fa fa-search"></i></a></li>
-                                        </ul>
+
+                @foreach($gallery as $gall)
+                        <div class="cbp-item graphic">
+                            <div class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img  style="height: 250px;object-fit: cover;" src="/assets/img/gallery/thumbnails/{{$gall->image}}" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <ul class="link-captions">
+                                                <li><a href="/assets/img/gallery/originals/{{$gall->image}}"
+                                                       class="cbp-lightbox"><i
+                                                            class="rounded-x fa fa-search"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 @endforeach
             </div>
 
@@ -38,7 +39,8 @@
                     </div>
 
                 </div>
-            <!--/end Grid Container-->
+                <!--/end Grid Container-->
+            </div>
         </div>
     </section>
 @endsection
