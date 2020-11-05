@@ -99,4 +99,13 @@ class FrontEndController extends Controller
 
     }
 
+    public function ads(){
+        $services = Services::all();
+        $settings = Settings::Find(1);
+
+
+        $data = ["settings" => $settings, "services" => $services];
+        return view('frontend.ads')->with($data);
+    }
+
 }

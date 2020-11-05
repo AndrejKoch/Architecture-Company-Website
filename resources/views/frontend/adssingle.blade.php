@@ -31,10 +31,10 @@
                 @endforeach
             </div>
 
-            <div class="container text-center" style="margin-top: 45px">
+            <div class="container" style="margin-top: 45px">
                 <div class="col-md-12">
                     <div class="mb-5">
-                        <h3 class="h3 g-letter-spacing-5 g-font-size-22 g-font-weight-400 g-color-primary g-mb-25">{{$services->name}}</h3>
+                        <h3 class="text-center h3 g-letter-spacing-5 g-font-size-22 g-font-weight-400 g-color-primary g-mb-25">{{$services->name}}</h3>
 
                         <div class="container" style="text-align: center;">
 
@@ -54,19 +54,19 @@
                                 <li class="list-inline-item margin-left-10">
                                     <i class="material-icons margin-left-10" style="color: #c74645;">bathtub</i>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item margin-left-10">
                                     <p> {{ $services->toilets }}</p>
                                 </li>
-                                <li class="list-inline-item">
-                                    <i class="material-icons" style="color: #c74645;">room</i>
+                                <li class="list-inline-item margin-left-10">
+                                    <i class="material-icons margin-left-10" style="color: #c74645;">room</i>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item margin-left-10">
                                     <p> {{ $services->location }}</p>
                                 </li>
-                                <li class="list-inline-item">
-                                    <i class="material-icons" style="color: #c74645;">euro_symbol</i>
+                                <li class="list-inline-item margin-left-10">
+                                    <i class="material-icons margin-left-10" style="color: #c74645;">euro_symbol</i>
                                 </li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item margin-left-10">
                                     <p> {{ $services->price }}</p>
                                 </li>
                             </ul>

@@ -5,10 +5,10 @@
     <!--=== Interactive Slider ===-->
     <section id="aboutus" class="g-py-100 g-theme-bg-blue-dark-v1-opacity-0_8--after">
 
-        <div class="text-center">
+        <div class="">
             <div class="container">
-                <div class="text-uppercase g-brd-primary">
-                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">{{ $settings->ctitle5 }}</h2>
+                <div class="margin-bottom-40 text-uppercase g-brd-primary">
+                    <h2 class="text-center u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">{{ $settings->ctitle5 }}</h2>
                 </div>
                 <p>{!! $settings->description !!}</p>
             </div>
@@ -29,7 +29,7 @@
             <div class="container content-sm">
                 <div class="row">
                     @foreach($staticPages as $staticPage)
-                        <div class="col-md-3 service-desc md-margin-bottom-50">
+                        <div class="col-md-3 md-margin-bottom-50">
                             <span aria-hidden="true" style="font-size: 30px;color: #c74645;"
                                   class="{{$staticPage->icon}} icon"></span>
                             <h3>{{$staticPage->title}}</h3>

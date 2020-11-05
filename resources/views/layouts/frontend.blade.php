@@ -75,8 +75,8 @@
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('about-us') ? 'active' : ''}}">
                                 <a href="{{ url('/about-us') }}" class="mybutton nav-link p-0">About</a>
                             </li>
-                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/#services', 'ads-single*') ? 'active' : ''}}">
-                                <a href="{{ url('/#services') }}" class="mybutton nav-link p-0">Advertisement</a>
+                            <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('ads', 'ads-single*') ? 'active' : ''}}">
+                                <a href="{{ url('/ads') }}" class="mybutton nav-link p-0">Advertisement</a>
                             </li>
 
 

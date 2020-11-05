@@ -75,14 +75,14 @@
         <div class="col-md-12">
             <!-- Thumbnails v1 -->
             <div class="row">
-                @foreach($services as $service)
+                @foreach($services->take(6) as $service)
                     <div class="col-md-4">
                         <div class="thumbnails thumbnail-style">
                             <div class="thumbnail-img">
                                 <div class="overflow-hidden">
                                     <a href="/ads-single/{{$service->slug}}">
                                         <img class="img-responsive"
-                                             style="width: 100%; max-height: 220px; object-fit: cover;"
+                                             style="width: 100%; height: 220px; object-fit: cover;"
                                              src="assets/img/services/thumbnails/{{$service->image}}" alt=""/>
                                     </a>
                                 </div>
@@ -111,13 +111,13 @@
                                     <li class="list-inline-item margin-left-10">
                                         <i class="material-icons margin-left-10" style="color: #c74645;">bathtub</i>
                                     </li>
-                                    <li class="list-inline-item">
+                                    <li class="list-inline-item margin-left-10">
                                         <p class="color-light"> {{ $service->toilets }}</p>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <i class="material-icons" style="color: #c74645;">euro_symbol</i>
+                                    <li class="list-inline-item margin-left-10">
+                                        <i class="material-icons margin-left-10" style="color: #c74645;">euro_symbol</i>
                                     </li>
-                                    <li class="list-inline-item">
+                                    <li class="list-inline-item margin-left-10">
                                         <p class="color-light"> {{ $service->price }}</p>
                                     </li>
                                 </ul>
