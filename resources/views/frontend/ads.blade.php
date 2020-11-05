@@ -27,28 +27,28 @@
                             <div class="container" style="text-align: center;">
 
                                 <ul class="list-inline">
-                                    <li class="list-inline-item margin-left-10">
-                                        <i class="material-icons margin-left-10" style="color: #c74645;">grid_on</i>
+                                    <li class="list-inline-item margin-left-5">
+                                        <i class="material-icons margin-left-5" style="color: #c74645;">grid_on</i>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
+                                    <li class="list-inline-item margin-left-5">
                                         <p>{{$service->size}}</p>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
-                                        <i class="material-icons margin-left-10" style="color: #c74645;">local_hotel</i>
+                                    <li class="list-inline-item margin-left-5">
+                                        <i class="material-icons margin-left-5" style="color: #c74645;">local_hotel</i>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
+                                    <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->bedrooms }}</p>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
-                                        <i class="material-icons margin-left-10" style="color: #c74645;">bathtub</i>
+                                    <li class="list-inline-item margin-left-5">
+                                        <i class="material-icons margin-left-5" style="color: #c74645;">bathtub</i>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
+                                    <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->toilets }}</p>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
-                                        <i class="material-icons margin-left-10" style="color: #c74645;">euro_symbol</i>
+                                    <li class="list-inline-item margin-left-5">
+                                        <i class="material-icons margin-left-5" style="color: #c74645;">euro_symbol</i>
                                     </li>
-                                    <li class="list-inline-item margin-left-10">
+                                    <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->price }}</p>
                                     </li>
                                 </ul>
