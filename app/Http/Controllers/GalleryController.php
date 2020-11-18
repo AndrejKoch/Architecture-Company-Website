@@ -21,7 +21,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallery = Gallery::all();
+        $gallery = Gallery::orderBy('id', 'desc')->paginate(10);
         $projects = Projects::all();
         $services = Services::all();
         $data = ["gallery" => $gallery, 'projects' => $projects, 'services' => $services];

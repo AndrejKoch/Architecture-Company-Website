@@ -31,14 +31,14 @@ Route::group(['middleware' => ['web', 'auth', 'check.user:Admin']], function () 
     }
 });
 
-Route::get('/', 'FrontEndController@index');
+Route::get('/', 'FrontEndController@index')->name('home');
 Route::get('/project/{project_slug}', 'FrontEndController@project')->name('project');
-Route::get('/ads-single/{service_slug}', 'FrontEndController@services')->name('adssingle');
+Route::get('/ads-single/{service_slug}', 'FrontEndController@services')->name('ads-single');
 Route::get('/ads', 'FrontEndController@ads')->name('ads');
-Route::get('/projects-all', 'FrontEndController@projects');
+Route::get('/projects-all', 'FrontEndController@projects')->name('projects-all');
 Route::get('/category/{category_slug}', 'FrontEndController@category');
-Route::get('/categories-all', 'FrontEndController@categories');
-Route::get('/about-us', 'FrontEndController@about');
+Route::get('/categories-all', 'FrontEndController@categories')->name('categories-all');
+Route::get('/about-us', 'FrontEndController@about')->name('about-us');
 Route::post('/send-message', 'EmailController@sendContact');
 
 

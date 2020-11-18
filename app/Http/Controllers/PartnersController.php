@@ -19,7 +19,7 @@ class PartnersController extends Controller
      */
     public function index()
     {
-        $partners = Partners::all();
+        $partners = Partners::orderBy('id', 'desc')->paginate(10);
         $data = ["partners" => $partners];
         return view('partners.index')->with($data);
     }

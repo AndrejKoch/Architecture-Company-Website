@@ -24,7 +24,7 @@
 
     <!-- CSS Implementing Plugins -->
 
-
+    <link rel="stylesheet" href="/frontend/css/app.css">
     <link rel="stylesheet" href="/frontend/css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/frontend/css/simple-line-icons.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="/frontend/css/animate.css">
     <link rel="stylesheet" href="/frontend/css/slick.css">
     <link rel="stylesheet" href="/frontend/css/blocks.css">
-    <link rel="stylesheet" href="/frontend/css/app.css">
     <link rel="stylesheet" href="/frontend/css/parallax-slider.css">
 
     <link rel="stylesheet" href="/frontend/cubeportfolio/css/cubeportfolio.min.css">
@@ -70,13 +69,13 @@
                             data-splitted-breakpoint="992">
 
                             <li class="nav-item g-mr-30--lg g-mb-7 g-mb-0--lg {{ request()->is('/') ? 'active' : ''}}">
-                                <a href="{{ url('/') }}" class="mybutton nav-link p-0">Home</a>
+                                <a href="{{ route('home') }}" class="mybutton nav-link p-0">Home</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('about-us') ? 'active' : ''}}">
-                                <a href="{{ url('/about-us') }}" class="mybutton nav-link p-0">About</a>
+                                <a href="{{ route('about-us') }}" class="mybutton nav-link p-0">About</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('ads', 'ads-single*') ? 'active' : ''}}">
-                                <a href="{{ url('/ads') }}" class="mybutton nav-link p-0">Advertisement</a>
+                                <a href="{{ route('ads') }}" class="mybutton nav-link p-0">Advertisement</a>
                             </li>
 
 
@@ -96,10 +95,10 @@
                             <!-- End Logo -->
 
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects', 'project*') ? 'active' : ''}}">
-                                <a href="{{ url('projects-all') }}" class="mybutton nav-link p-0">Projects</a>
+                                <a href="{{ route('projects-all') }}" class="mybutton nav-link p-0">Projects</a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('categories-all','category*') ? 'active' : ''}}">
-                                <a href="{{ url('categories-all') }}" class="mybutton nav-link p-0">Categories</a>
+                                <a href="{{ route('categories-all') }}" class="mybutton nav-link p-0">Categories</a>
                             </li>
                             <li class="nav-item g-ml-30--lg {{ request()->is('/#contact') ? 'active' : ''}}">
                                 <a href="#contact" class="mybutton nav-link p-0">Contact</a>

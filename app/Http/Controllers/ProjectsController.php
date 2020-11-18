@@ -21,7 +21,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Projects::all();
+        $projects = Projects::orderBy('id', 'desc')->paginate(10);
         $data = ["projects" => $projects];
         return view('projects.index')->with($data);
     }

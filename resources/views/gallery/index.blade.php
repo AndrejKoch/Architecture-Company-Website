@@ -33,35 +33,34 @@
                                 <td>Action</td>
                             </tr>
 
-                            @foreach($gallery as $gallery)
+                            @foreach($gallery as $galler)
                                 <tr>
-                                    <td>{{ $gallery->id }}</td>
-                                    <td><img src="/assets/img/gallery/thumbnails/{{$gallery->image}}" class="img-fluid"></td>
-                                    <td>{{ $gallery->name }}</td>
-                                    <td>@if($gallery->project_id != NULL)
-                                            {{ $gallery->getProject->name }}
+                                    <td>{{ $galler->id }}</td>
+                                    <td><img src="/assets/img/gallery/thumbnails/{{$galler->image}}" class="img-fluid"></td>
+                                    <td>{{ $galler->name }}</td>
+                                    <td>@if($galler->project_id != NULL)
+                                            {{ $galler->getProject->name }}
                                         @else
                                             n/a
                                         @endif</td>
-                                    <td>@if($gallery->service_id != NULL)
-                                        {{ $gallery->getServices->name }}
+                                    <td>@if($galler->service_id != NULL)
+                                        {{ $galler->getServices->name }}
                                     @else
                                         n/a
                                         @endif</td>
 
                                     <td>
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/gallery', [$gallery->id, 'edit']) }}">Edit</a>
-                                        <form action="{{ url('gallery', [$gallery->id]) }}" method="POST">
+                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/gallery', [$galler->id, 'edit']) }}">Edit</a>
+                                        <form action="{{ url('gallery', [$galler->id]) }}" method="POST">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
-
                                 </tr>
                             @endforeach
-
                         </table>
+                        {!! $gallery->links() !!}
                     </div>
                 </div>
             </div>

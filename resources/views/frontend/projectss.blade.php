@@ -30,6 +30,12 @@
                     </div>
                 @endforeach
             </div>
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    {!! $projects->links() !!}
+                </div>
+            </div>
         </div>
     </section>
 @endsection

@@ -33,22 +33,22 @@
                                 <td>Action</td>
                             </tr>
 
-                            @foreach($projects as $projects)
+                            @foreach($projects as $project)
                                 <tr>
-                                    <td>{{ $projects->id }}</td>
-                                    <td><img src="/assets/img/projects/thumbnails/{{$projects->image}}" class="img-fluid"></td>
-                                    <td>{{ $projects->name }}</td>
-                                    <td>{{ $projects->getCategory->name }}</td>
-                                    <td> @if($projects->description != NULL)
-                                            {!!  Str::limit($projects->description, 150) !!}
+                                    <td>{{ $project->id }}</td>
+                                    <td><img src="/assets/img/projects/thumbnails/{{$project->image}}" class="img-fluid"></td>
+                                    <td>{{ $project->name }}</td>
+                                    <td>{{ $project->getCategory->name }}</td>
+                                    <td> @if($project->description != NULL)
+                                            {!!  Str::limit($project->description, 150) !!}
                                         @else
                                             N/A
                                         @endif</td>
 
 
                                     <td>
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/projects', [$projects->id, 'edit']) }}">Edit</a>
-                                        <form action="{{ url('projects', [$projects->id]) }}" method="POST">
+                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/projects', [$project->id, 'edit']) }}">Edit</a>
+                                        <form action="{{ url('projects', [$project->id]) }}" method="POST">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -59,6 +59,7 @@
                             @endforeach
 
                         </table>
+                        {!! $projects->links() !!}
                     </div>
                 </div>
             </div>

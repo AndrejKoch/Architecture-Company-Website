@@ -20,7 +20,7 @@
                                    href="/ads-single/{{$service->slug}}">{{ $service->link }}</a>
                             </div>
                             <div class="caption text-center" style="margin-left: 2%; margin-bottom: 5%;">
-                                <h4><a class="g-color-white hover-effect"
+                                <h4><a class="g-color-black-opacity-0_7 hover-effect"
                                        href="/ads-single/{{$service->slug}}">{{$service->name}}</a>
                                 </h4>
                             </div>
@@ -65,8 +65,12 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {!! $services->links() !!}
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
 @endsection

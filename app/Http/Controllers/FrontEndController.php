@@ -58,7 +58,7 @@ class FrontEndController extends Controller
     }
 
     public function projects(){
-        $projects = Projects::all();
+        $projects = Projects::orderBy('id', 'desc')->paginate(9);
         $settings = Settings::Find(1);
 
 
@@ -100,7 +100,7 @@ class FrontEndController extends Controller
     }
 
     public function ads(){
-        $services = Services::all();
+        $services = Services::orderBy('id', 'desc')->paginate(9);
         $settings = Settings::Find(1);
 
 

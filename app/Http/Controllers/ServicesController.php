@@ -20,7 +20,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Services::all();
+        $services = Services::orderBy('id', 'desc')->paginate(10);
         $data = ["services" => $services];
         return view('services.index')->with($data);
     }

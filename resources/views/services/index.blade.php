@@ -59,23 +59,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($services as $services)
+                            @foreach($services as $service)
                                 <tr>
-                                    <td>{{ $services->id }}</td>
-                                    <td>{{ $services->name }}</td>
-                                    <td>{!! Str::limit($services->description, 50) !!}</td>
-                                    <td>{{ $services->link }}</td>
-                                    <td>{{ $services->location }}</td>
-                                    <td>{{ $services->price }}</td>
-                                    <td>{{ $services->size }}</td>
-                                    <td>{{ $services->bedrooms }}</td>
-                                    <td>{{ $services->toilets }}</td>
-                                    <td><img src="/assets/img/services/thumbnails/{{$services->image}}" class="img-fluid"></td>
+                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $service->name }}</td>
+                                    <td>{!! Str::limit($service->description, 50) !!}</td>
+                                    <td>{{ $service->link }}</td>
+                                    <td>{{ $service->location }}</td>
+                                    <td>{{ $service->price }}</td>
+                                    <td>{{ $service->size }}</td>
+                                    <td>{{ $service->bedrooms }}</td>
+                                    <td>{{ $service->toilets }}</td>
+                                    <td><img src="/assets/img/services/thumbnails/{{$service->image}}" class="img-fluid"></td>
 
                                     <td>
 
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/services', [$services->id, 'edit']) }}">Edit</a>
-                                        <form action="{{ url('/services', [$services->id]) }}" method="post">
+                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/services', [$service->id, 'edit']) }}">Edit</a>
+                                        <form action="{{ url('/services', [$service->id]) }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
 
@@ -87,6 +87,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {!! $services->links() !!}
                     </div>
                 </div>
             </div>

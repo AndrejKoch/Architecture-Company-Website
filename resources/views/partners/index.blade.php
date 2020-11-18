@@ -4,7 +4,8 @@
     <div class="row">
         <div class="col-md-12">
 
-            <a href="/partners/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Partner</a>
+            <a href="/partners/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add
+                Partner</a>
 
         </div>
     </div>
@@ -31,30 +32,30 @@
                                 <td>Action</td>
                             </tr>
 
-                            @foreach($partners as $partners)
+                            @foreach($partners as $partner)
                                 <tr>
-                                    <td>{{ $partners->id }}</td>
-                                    <td><img src="/assets/img/partners/thumbnails/{{$partners->image}}" class="img-fluid"></td>
-                                    <td>{{ $partners->name }}</td>
+                                    <td>{{ $partner->id }}</td>
+                                    <td><img src="/assets/img/partners/thumbnails/{{$partner->image}}"
+                                             class="img-fluid"></td>
+                                    <td>{{ $partner->name }}</td>
 
                                     <td>
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/partners', [$partners->id, 'edit']) }}">Edit</a>
-                                        <form action="{{ url('partners', [$partners->id]) }}" method="POST">
+                                        <a class="btn btn-warning pull-left" style="margin-top: 6px"
+                                           href="{{ url('/partners', [$partner->id, 'edit']) }}">Edit</a>
+                                        <form action="{{ url('partners', [$partner->id]) }}" method="POST">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
-
                                 </tr>
                             @endforeach
-
                         </table>
+                        {!! $partners->links() !!}
                     </div>
                 </div>
             </div>
         </div>
-
 
 
     </div>
