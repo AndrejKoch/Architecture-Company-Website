@@ -371,6 +371,6 @@
 </script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VZx7pTEJk6GqS4v93d-a9kSgeduiIu4&callback=initMap" async></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async></script>
 </body>
 </html>
