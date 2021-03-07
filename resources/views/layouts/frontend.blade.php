@@ -10,6 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{$settings->title}}">
+    <meta itemprop="description" content="Hard-coded description">
+    <meta itemprop="image" content="https://modus.test/assets/img/logo/thumbnails/{{$settings->logo}}">
+
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content=""/>
+    <meta property="og:locale" content="mk_MK"/>
+    <meta property="og:title" content="Hard-coded description"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{$settings->mainurl}}"/>
+    <meta property="og:image" content="https://modus.test/assets/img/logo/originals/{{$settings->logo}}"/>
+    <meta property="og:description" content="Hard-coded description"/>
+    <meta property="og:site_name" content="{{$settings->title}}"/>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
