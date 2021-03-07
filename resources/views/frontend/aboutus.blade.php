@@ -70,7 +70,7 @@
                 @foreach($team as $team)
                     <div class="col-md-3 col-sm-6">
                         <div class="team-img">
-                            <img class="img-responsive" src="assets/img/team/medium/{{$team->image}}" alt="">
+                            <img class="rounded-circle img-thumbnail img-responsive" src="assets/img/team/medium/{{$team->image}}" alt="">
                             <div class="team-hover">
                                 <span>{{$team->name}}</span>
                                 <small>{{$team->role}}</small>

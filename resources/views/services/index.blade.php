@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <a href="/services/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Service</a>
+            <a href="/services/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Advertisement</a>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title ">Services page table</h4>
+                    <h4 class="card-title ">Advertisements page table</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

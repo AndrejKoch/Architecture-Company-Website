@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header card-header-primary">
-                <h4 class="card-title">Edit page</h4>
+                <h4 class="card-title">Edit card</h4>
             </div>
             <div class="card-body">
                 <form action="{{ url('/static_page', [$static_page->id]) }}" method="post" enctype="multipart/form-data">

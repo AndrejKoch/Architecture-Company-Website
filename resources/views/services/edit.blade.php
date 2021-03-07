@@ -171,7 +171,7 @@
                         <span style="color: red">{{ $errors->first('image') }}</span>
                     @endif
 
-                    <button type="submit" class="btn btn-primary">Save service</button>
+                    <button type="submit" class="btn btn-primary">Save advertisement</button>
                 </form>
             </div>
         </div>

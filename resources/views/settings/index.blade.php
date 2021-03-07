@@ -28,7 +28,7 @@
             <div class="col-lg-6">
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
-                        <label class="bmd-label">Главна адреса</label>
+                        <label class="bmd-label">Main URL</label>
                     </div>
                     <!--Widget Header-->
                     <div class="row">
@@ -50,7 +50,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Наслов</label>
+                        <label class="bmd-label">Title</label>
                     </div>
 
                     <!--Widget Header-->
@@ -74,7 +74,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Email адреса</label>
+                        <label class="bmd-label">E-mail</label>
                     </div>
 
                     <!--Widget Header-->
@@ -96,7 +96,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Адреса</label>
+                        <label class="bmd-label">Address</label>
                     </div>
 
                     <!--Widget Header-->
@@ -139,7 +139,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Опис</label>
+                        <label class="bmd-label">Description</label>
                     </div>
                     <!--Widget Header-->
                     <div class="row">
@@ -186,7 +186,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Мобилен телефон</label>
+                        <label class="bmd-label">Mobile phone</label>
                     </div>
                     <!--Widget Header-->
                     <div class="row">
@@ -209,7 +209,7 @@
                 <div class="form-group bmd-form-group card">
                     <div class="card-body">
 
-                        <label class="bmd-label">Телефон</label>
+                        <label class="bmd-label">Phone</label>
                     </div>
                     <!--Widget Header-->
                     <div class="row">
@@ -593,7 +593,7 @@
             <div class="form-group bmd-form-group card">
                 <div class="card-body">
 
-                    <label class="bmd-label">Последни промени</label>
+                    <label class="bmd-label">Last changes</label>
                 </div>
                 <!--Widget Header-->
                 <div class="row">
