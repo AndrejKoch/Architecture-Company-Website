@@ -19,7 +19,7 @@
     <!-- Open Graph data -->
     <meta property="fb:app_id" content=""/>
     <meta property="og:locale" content="mk_MK"/>
-    <meta property="og:title" content="Hard-coded description"/>
+    <meta property="og:title" content="{{$settings->title}}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{$settings->mainurl}}"/>
     <meta property="og:image" content="https://modus.test/assets/img/logo/originals/{{$settings->logo}}"/>
