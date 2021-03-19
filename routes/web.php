@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::group(['middleware' => ['web', 'auth', 'check.user:Admin']], function () {
+Route::group(['middleware' => ['auth']], function () {
     {
-    Route::get('/home', 'HomeController@index')->name('dashboard');
+    Route::get('/home', 'DashboardController@index')->name('dashboard');
     Route::resource('/user', 'UserController');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/static_page', 'StaticPageController');

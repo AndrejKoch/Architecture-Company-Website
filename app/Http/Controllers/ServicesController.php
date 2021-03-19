@@ -79,20 +79,8 @@ class ServicesController extends Controller
         $services->bedrooms = $bedrooms;
         $services->toilets = $toilets;
         $services->save();
-
         Session::flash('flash_message', 'Service successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -128,7 +116,6 @@ class ServicesController extends Controller
             $input['image'] = $this->imageStore($request);
         }
         $services->fill($input)->save();
-
         Session::flash('flash_message', 'Service successfully updated!');
         return redirect()->back();
     }
@@ -143,11 +130,10 @@ class ServicesController extends Controller
     {
         $services = Services::FindOrFail($id);
         $gallery = Gallery::where('service_id', '=', $services->id)->get();
-
-        foreach($gallery as $g)  {
+        foreach($gallery as $g)
+        {
             $g->delete();
         }
-
         unlink(public_path().'/assets/img/services/medium/'.$services->image);
         unlink(public_path().'/assets/img/services/originals/'.$services->image);
         unlink(public_path().'/assets/img/services/thumbnails/'.$services->image);
@@ -176,16 +162,12 @@ class ServicesController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/services/originals/';;
         $thumbnail = public_path() . '/assets/img/services/thumbnails/';
         $medium = public_path() . '/assets/img/services/medium/';

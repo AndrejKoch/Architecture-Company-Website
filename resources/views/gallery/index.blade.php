@@ -29,7 +29,7 @@
                                 <td>Image</td>
                                 <td>Name</td>
                                 <td>Project Name</td>
-                                <td>Service Name</td>
+                                <td>Advertisement Name</td>
                                 <td>Action</td>
                             </tr>
 

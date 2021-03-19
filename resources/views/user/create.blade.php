@@ -15,9 +15,8 @@
                 <p class="card-category">Create your profile</p>
             </div>
             <div class="card-body">
-                <form action="{{ url('/user') }}" method="post">
-                    {{ csrf_field() }}
-
+                <form action="{{ route('user.store') }}" method="post">
+                        @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">

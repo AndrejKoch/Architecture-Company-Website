@@ -8,8 +8,7 @@
     <form action="{{ route('services.store') }}" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12">
-
-                {{ csrf_field() }}
+                @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">

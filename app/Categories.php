@@ -16,7 +16,6 @@ class Categories extends Model
         'name', 'parent_id', 'slug'
     ];
 
-
     public static function getTree()
     {
         $categories = self::get()->toTree();
@@ -32,6 +31,7 @@ class Categories extends Model
 
         return $traverse($categories);
     }
+
     public static function getList() {
         $categories = self::get()->toTree();
         $lists = '<li class="dropdown mega-menu">';
@@ -40,6 +40,7 @@ class Categories extends Model
         $lists .= "</li>";
         return $lists;
     }
+
     public static function renderNodeHP($node) {
         $list = '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/'.$node->slug.'">'.$node->name.'</a>';
         if ( $node->children()->count() > 0 ) {

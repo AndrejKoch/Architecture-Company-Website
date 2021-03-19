@@ -30,8 +30,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        $categories = Categories::getTree();
-        $data = ["categories" => $categories];
+        $data = ["categories" => Categories::getTree()];
         return view('categories.create')->with($data);
     }
 
@@ -61,21 +60,9 @@ class CategoriesController extends Controller
 
         $category =  Categories::create($data);
 
-
         Session::flash('flash_message', 'Category successfully created!');
         return redirect()->back();
 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

@@ -35,10 +35,9 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $gallery = Gallery::all();
         $projects = Projects::all();
         $services = Services::all();
-        $data = ["gallery" => $gallery, 'projects' => $projects, 'services' => $services];
+        $data = ['projects' => $projects, 'services' => $services];
         return view('gallery.create')->with($data);
     }
 
@@ -73,17 +72,6 @@ class GalleryController extends Controller
 
         Session::flash('flash_message', 'Gallery image successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -134,8 +122,6 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::FindOrFail($id);
 
-
-
         unlink(public_path().'/assets/img/gallery/medium/'.$gallery->image);
         unlink(public_path().'/assets/img/gallery/originals/'.$gallery->image);
         unlink(public_path().'/assets/img/gallery/thumbnails/'.$gallery->image);
@@ -165,16 +151,12 @@ class GalleryController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/gallery/originals/';;
         $thumbnail = public_path() . '/assets/img/gallery/thumbnails/';
         $medium = public_path() . '/assets/img/gallery/medium/';

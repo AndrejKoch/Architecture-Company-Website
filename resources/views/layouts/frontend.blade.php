@@ -28,7 +28,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="styleKsheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="/frontend/css/slick.css">
     <link rel="stylesheet" href="/frontend/css/blocks.css">
     <link rel="stylesheet" href="/frontend/css/parallax-slider.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
 
     <link rel="stylesheet" href="/frontend/cubeportfolio/css/cubeportfolio.min.css">
     <link rel="stylesheet" href="/frontend/cubeportfolio/custom/custom-cubeportfolio.css">
@@ -107,8 +108,6 @@
                                          data-header-fix-moment-classes="d-block">
                                 </a>
                             </li>
-                            <!-- End Logo -->
-
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects', 'project*') ? 'active' : ''}}">
                                 <a href="{{ route('projects-all') }}" class="mybutton nav-link p-0">Projects</a>
                             </li>
@@ -120,9 +119,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- End Navigation -->
-
-                    <!-- Responsive Toggle Button -->
                     <button class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0" type="button"
                             aria-label="Toggle navigation"
                             aria-expanded="false"
@@ -135,38 +131,21 @@
                   </span>
                 </span>
                     </button>
-                    <!-- End Responsive Toggle Button -->
                 </div>
             </nav>
         </div>
     </header>
+    @yield('slider')
 
-    <!-- End Header v1 -->
-    <!-- Section Content -->
-   @yield('slider')
-    <!-- End Section Content -->
-
-    <!-- Section Content -->
     @yield('about')
-    <!-- End Section Content -->
 
-    <!-- Timeline -->
     @yield('services')
-    <!-- End Timeline -->
 
-    <!-- Section Content -->
-   @yield('projects')
-    <!-- End Section Content -->
+    @yield('projects')
 
-    <!-- Section Content -->
-    <!-- End Section Content -->
     @yield('content')
 
-
-    <!-- Section Content -->
     @yield('partners')
-    <!-- End Section Content -->
-
     <!-- Footer -->
     <footer>
         <div id="contact" class="g-py-80">
@@ -243,7 +222,7 @@
 
         <div class="text-center g-color-gray-dark-v5 g-theme-bg-blue-dark-v1 g-py-70">
             <a class="d-block g-width-140 mx-auto g-mb-30" href="/">
-                <img class="img-fluid" src="/assets/img/logo/originals/{{ $settings->logo }}" style="height: 64px;" alt="Image description">
+                <img class="img-fluid logo-height" src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image description">
             </a>
 
             <ul class="list-inline d-inline-block mb-0">

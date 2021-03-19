@@ -17,11 +17,8 @@ class Projects extends Model
         return $this->belongsTo('App\Categories', 'category_id', 'id');
     }
 
-
     public function gallery()
     {
         return $this->hasMany('App\Gallery','project_id','id');
     }
-
-
 }

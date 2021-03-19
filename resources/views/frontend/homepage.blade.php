@@ -40,7 +40,7 @@
         <div class="container px-0">
             <!-- Row -->
             <div class="row no-gutters">
-                @foreach($staticpage->take(4) as $staticpage)
+                @foreach($staticpages->take(4) as $staticpage)
                     <div class="col-md-6 col-lg-3">
                         <div class="g-bg-img-hero"
                              style="background-image: url('/assets/img/static_page/medium/{{$staticpage->image}}');">

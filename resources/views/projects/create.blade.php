@@ -8,10 +8,7 @@
     <form action="{{ route('projects.store') }}" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12">
-
-
-
-                {{ csrf_field() }}
+                @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -24,15 +21,11 @@
                                     </span>
                             @enderror
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="row">
                     <div class="col-md-2">
                         <div class="form-group bmd-form-group">
-
                             <div class="file_input_div">
                                 <div class="file_input">
                                     <label
@@ -48,20 +41,15 @@
                                     <label class="mdl-textfield__label" for="file_input_text"></label>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 @if($errors->has('image'))
                     <span style="color: red">{{ $errors->first('image') }}</span>
                 @endif
-
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-
                             <select class="form-control @error('category_id') is-invalid @enderror" name="category_id">
                                 @if($categories)
                                     @foreach($categories as $category)
@@ -75,14 +63,11 @@
                                     </span>
                             @enderror
                         </div>
-
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-
                             <textarea type="text" class="form-control @error('description') is-invalid @enderror"
                                       name="description" id="description">{{ old('description') }}</textarea>
                             @error('description')
@@ -93,13 +78,10 @@
                         </div>
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Create new project</button>
-
             </div>
         </div>
     </form>
-
 @endsection
 @section('scripts')
     <script>

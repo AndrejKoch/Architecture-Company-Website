@@ -32,9 +32,7 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        $settings = Settings::all();
-        $data = ['settings' => $settings];
-        return view('settings.create')->with($data);
+        return view('settings.create');
     }
 
     /**
@@ -48,7 +46,8 @@ class SettingsController extends Controller
 
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255',
-
+            'lat' => 'numeric',
+            'lng' => 'numeric'
         ]);
 
         if ($validator->fails()) {
@@ -89,16 +88,6 @@ class SettingsController extends Controller
 
         Session::flash('flash_message', 'Settings successfully created!');
         return redirect()->back();}
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

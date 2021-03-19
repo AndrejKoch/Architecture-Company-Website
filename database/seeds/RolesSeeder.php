@@ -17,8 +17,6 @@ class RolesSeeder extends Seeder
     public function run()
     {
 
-
-
         $faker = Faker\Factory::create();
 
         DB::table('users_roles')->insert([

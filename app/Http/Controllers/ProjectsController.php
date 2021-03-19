@@ -33,9 +33,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        $projects = Projects::all();
         $categories = Categories::getTree();
-        $data = ['categories' => $categories, 'projects' => $projects];
+        $data = ['categories' => $categories];
         return view('projects.create')->with($data);
     }
 
@@ -62,8 +61,6 @@ class ProjectsController extends Controller
 
         $slug = Str::slug($request->get('name'), '_');
         $image = $this->imageStore($request);
-
-
         $project = new Projects();
         $project->name = $request->name;
         $project->image = $image;
@@ -74,17 +71,6 @@ class ProjectsController extends Controller
 
         Session::flash('flash_message', 'Project successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -136,17 +122,14 @@ class ProjectsController extends Controller
     {
         $project = Projects::FindOrFail($id);
         $gallery = Gallery::where('project_id', '=', $project->id)->get();
-
-        foreach($gallery as $g)  {
+        foreach($gallery as $g)
+        {
             $g->delete();
         }
-
         unlink(public_path().'/assets/img/projects/medium/'.$project->image);
         unlink(public_path().'/assets/img/projects/originals/'.$project->image);
         unlink(public_path().'/assets/img/projects/thumbnails/'.$project->image);
-
         $project->delete();
-
         Session::flash('flash_message', 'Project successfully deleted!');
         return redirect()->back();
     }
@@ -170,16 +153,12 @@ class ProjectsController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/projects/originals/';;
         $thumbnail = public_path() . '/assets/img/projects/thumbnails/';
         $medium = public_path() . '/assets/img/projects/medium/';

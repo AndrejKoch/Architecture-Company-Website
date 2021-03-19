@@ -80,7 +80,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
-                            <p>Select service</p>
+                            <p>Select advertisement</p>
                             <select type="text" class="form-control @error('service_id') is-invalid @enderror"
                                     name="service_id">
                                 <option></option>

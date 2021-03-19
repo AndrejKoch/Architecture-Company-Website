@@ -11,5 +11,4 @@ class Counter extends Model
     protected $fillable = [
         'name','icon','number'
     ];
-
 }

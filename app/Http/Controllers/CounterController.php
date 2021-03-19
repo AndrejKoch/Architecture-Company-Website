@@ -29,9 +29,7 @@ class CounterController extends Controller
      */
     public function create()
     {
-        $counter = Counter::all();
-        $data = ["counter" => $counter];
-        return view('counter.create')->with($data);
+        return view('counter.create');
     }
 
     /**
@@ -44,6 +42,8 @@ class CounterController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
+            'number' => 'required|numeric',
+            'icon' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -60,17 +60,6 @@ class CounterController extends Controller
 
         Session::flash('flash_message', 'Counter successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

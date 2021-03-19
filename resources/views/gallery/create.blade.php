@@ -46,7 +46,6 @@
                                     <label class="mdl-textfield__label" for="file_input_text"></label>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -77,7 +76,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-                            <p>Select service</p>
+                            <p>Select advertisement</p>
 
                             <select class="form-control @error('service_id') is-invalid @enderror" name="service_id">
                                 @if($services)

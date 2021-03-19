@@ -16,5 +16,4 @@ class StaticPage extends Model
         'link',
         'icon'
     ];
-
 }

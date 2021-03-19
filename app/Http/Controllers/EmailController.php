@@ -15,7 +15,9 @@ class EmailController extends Controller
      */
     public function __construct()
     {
+
     }
+
     public function sendContact(Request $request)
     {
         $data = $request->all();
@@ -38,5 +40,4 @@ class EmailController extends Controller
         Session::flash('flash_message', 'Email successfully sent!');
         return redirect('/');
     }
-
 }

@@ -31,10 +31,7 @@ class PartnersController extends Controller
      */
     public function create()
     {
-        $partners = Partners::all();
-        $data = ['partners' => $partners];
-        return view('partners.create')->with($data);
-
+        return view('partners.create');
     }
 
     /**
@@ -59,8 +56,6 @@ class PartnersController extends Controller
 
         $slug = Str::slug($request->get('name'), '_');
         $image = $this->imageStore($request);
-
-
         $partners = new Partners();
         $partners->name = $request->name;
         $partners->image = $image;
@@ -68,17 +63,6 @@ class PartnersController extends Controller
 
         Session::flash('flash_message', 'Partner successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -110,7 +94,6 @@ class PartnersController extends Controller
             unlink(public_path().'/assets/img/partners/medium/'.$partners->image);
             unlink(public_path().'/assets/img/partners/originals/'.$partners->image);
             unlink(public_path().'/assets/img/partners/thumbnails/'.$partners->image);
-
             $input['image'] = $this->imageStore($request);
         }
         $partners->fill($input)->save();
@@ -128,14 +111,10 @@ class PartnersController extends Controller
     public function destroy($id)
     {
         $partners = Partners::FindOrFail($id);
-
-
-
         unlink(public_path().'/assets/img/partners/medium/'.$partners->image);
         unlink(public_path().'/assets/img/partners/originals/'.$partners->image);
         unlink(public_path().'/assets/img/partners/thumbnails/'.$partners->image);
         $partners->delete();
-
         Session::flash('flash_message', 'Partner successfully deleted!');
         return redirect()->back();
     }
@@ -159,16 +138,12 @@ class PartnersController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/partners/originals/';;
         $thumbnail = public_path() . '/assets/img/partners/thumbnails/';
         $medium = public_path() . '/assets/img/partners/medium/';

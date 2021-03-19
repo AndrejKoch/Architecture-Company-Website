@@ -54,8 +54,6 @@ class StaticPageController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-
         $description = $request->description;
         $slug = Str::slug($request->get('title'), '-');
         $image = $this->imageStore($request);
@@ -71,17 +69,6 @@ class StaticPageController extends Controller
 
         Session::flash('flash_message', 'Page successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -113,7 +100,6 @@ class StaticPageController extends Controller
             unlink(public_path().'/assets/img/static_page/medium/'.$static_page->image);
             unlink(public_path().'/assets/img/static_page/originals/'.$static_page->image);
             unlink(public_path().'/assets/img/static_page/thumbnails/'.$static_page->image);
-
             $input['image'] = $this->imageStore($request);
         }
         $static_page->fill($input)->save();
@@ -131,9 +117,6 @@ class StaticPageController extends Controller
     public function destroy($id)
     {
         $static_page = StaticPage::FindOrFail($id);
-
-
-
         unlink(public_path().'/assets/img/static_page/medium/'.$static_page->image);
         unlink(public_path().'/assets/img/static_page/originals/'.$static_page->image);
         unlink(public_path().'/assets/img/static_page/thumbnails/'.$static_page->image);
@@ -162,16 +145,12 @@ class StaticPageController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/static_page/originals/';;
         $thumbnail = public_path() . '/assets/img/static_page/thumbnails/';
         $medium = public_path() . '/assets/img/static_page/medium/';

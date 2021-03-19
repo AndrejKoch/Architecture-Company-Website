@@ -8,11 +8,7 @@
     @endif
 
     <form action="{{ route('settings.store') }}" method="post" enctype="multipart/form-data">
-
-
-        {{ csrf_field() }}
-
-
+        @csrf
         <div class="container">
             <div class="row">
                 <div class="col-md-6">

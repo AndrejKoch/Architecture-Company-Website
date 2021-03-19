@@ -31,9 +31,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $team = Team::all();
-        $data = ["team" => $team];
-        return view('team.create')->with($data);
+        return view('team.create');
     }
 
     /**
@@ -48,15 +46,12 @@ class TeamController extends Controller
             'name' => 'required|max:255',
             'image' => 'required',
         ]);
-
         if ($validator->fails()) {
             return redirect('team/create')
                 ->withErrors($validator)
                 ->withInput();
         }
-
         $image = $this->imageStore($request);
-
 
         $team = new Team();
         $team->name = $request->name;
@@ -67,17 +62,6 @@ class TeamController extends Controller
 
         Session::flash('flash_message', 'Team member successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -109,7 +93,6 @@ class TeamController extends Controller
             unlink(public_path().'/assets/img/team/medium/'.$team->image);
             unlink(public_path().'/assets/img/team/originals/'.$team->image);
             unlink(public_path().'/assets/img/team/thumbnails/'.$team->image);
-
             $input['image'] = $this->imageStore($request);
         }
         $team->fill($input)->save();
@@ -127,9 +110,6 @@ class TeamController extends Controller
     public function destroy($id)
     {
         $team = Team::FindOrFail($id);
-
-
-
         unlink(public_path().'/assets/img/team/medium/'.$team->image);
         unlink(public_path().'/assets/img/team/originals/'.$team->image);
         unlink(public_path().'/assets/img/team/thumbnails/'.$team->image);
@@ -158,16 +138,12 @@ class TeamController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/team/originals/';;
         $thumbnail = public_path() . '/assets/img/team/thumbnails/';
         $medium = public_path() . '/assets/img/team/medium/';

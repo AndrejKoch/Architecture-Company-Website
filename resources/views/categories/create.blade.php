@@ -16,8 +16,8 @@
                 <p class="card-category">Create your profile</p>
             </div>
             <div class="card-body">
-                <form action="{{ url('/categories') }}" method="post">
-                    {{ csrf_field() }}
+                <form action="{{ route('categories.store') }}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">
@@ -30,14 +30,11 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">
-
                                 <select class="form-control @error('parent_id') is-invalid @enderror" name="parent_id">
                                     <option value="">Main Category</option>
                                     @if($categories)
@@ -52,15 +49,11 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
                     </div>
-
                     <button type="submit" class="btn btn-primary pull-right">Add Category</button>
                     <div class="clearfix"></div>
                 </form>
-
-
             </div>
         </div>
     </div>

@@ -17,7 +17,6 @@
                 <form action="{{ url('/user', [$user->id]) }}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">

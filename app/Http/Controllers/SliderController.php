@@ -33,7 +33,6 @@ class SliderController extends Controller
     public function create()
     {
         return view('slider.create');
-
     }
 
     /**
@@ -56,9 +55,6 @@ class SliderController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-
-
         $image = $this->imageStore($request);
         $description = $request->description;
         $link = $request->link;
@@ -71,20 +67,8 @@ class SliderController extends Controller
         $slider->link = $link;
         $slider->save();
 
-
         Session::flash('flash_message', 'Slider successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -112,7 +96,6 @@ class SliderController extends Controller
         $slider = Slider::FindOrFail($id);
         if($request->hasFile('image'))
         {
-
             unlink(public_path().'/assets/img/slider/medium/'.$slider->image);
             unlink(public_path().'/assets/img/slider/originals/'.$slider->image);
             unlink(public_path().'/assets/img/slider/thumbnails/'.$slider->image);
@@ -125,7 +108,8 @@ class SliderController extends Controller
             $slider->save();
 
         }
-        else {
+        else
+        {
             $slider->title = $request->get('title');
             $slider->description = $request->get('description');
             $slider->link = $request->get('link');
@@ -145,9 +129,6 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::FindOrFail($id);
-
-
-
         unlink(public_path().'/assets/img/slider/medium/'.$slider->image);
         unlink(public_path().'/assets/img/slider/originals/'.$slider->image);
         unlink(public_path().'/assets/img/slider/thumbnails/'.$slider->image);
@@ -176,15 +157,12 @@ class SliderController extends Controller
             });
             $imagethumb->save($paths->thumbnail . $imageName);
             $imagemedium->save($paths->medium . $imageName);
-
             return $imageName;
         }
-
     }
 
     public function makePaths()
     {
-
         $original = public_path() . '/assets/img/slider/originals/';;
         $thumbnail = public_path() . '/assets/img/slider/thumbnails/';
         $medium = public_path() . '/assets/img/slider/medium/';

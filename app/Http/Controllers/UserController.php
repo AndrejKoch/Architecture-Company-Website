@@ -11,12 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $data = ["users" => $users];
+        $data = ["users" =>  User::all()];
         return view('user.index')->with($data);
     }
 
@@ -36,9 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $users = User::all();
         $roles = Role::all();
-        $data = ["users" => $users, "roles" => $roles];
+        $data = ["roles" => $roles];
         return view('user.create')->with($data);
     }
 
@@ -50,8 +42,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'role_id' => 'required',
@@ -66,7 +56,6 @@ class UserController extends Controller
                 ->withInput();
         }
 
-
         $user = User::create([
             'name'      => $request->get('name'),
             'role_id'   => $request->get('role_id'),
@@ -76,17 +65,6 @@ class UserController extends Controller
 
         Session::flash('flash_message', 'User successfully created!');
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -135,5 +113,4 @@ class UserController extends Controller
         Session::flash('flash_message', 'User successfully deleted!');
         return redirect()->back();
     }
-
 }
