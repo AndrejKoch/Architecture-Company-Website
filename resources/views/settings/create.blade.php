@@ -1,12 +1,10 @@
 @extends('layouts.dashboard')
 @section('content')
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <form action="{{ route('settings.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="container">
@@ -23,11 +21,8 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
-
                         <div class="file_input_div">
                             <div class="file_input">
                                 <label
@@ -49,11 +44,8 @@
                 </div>
             </div>
         </div>
-
-
         <div class="container">
             <div class="row">
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Main URL</label>
@@ -66,8 +58,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">E-mail</label>
@@ -82,8 +72,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -98,8 +86,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Address</label>
@@ -114,8 +100,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -130,8 +114,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Mobile phone</label>
@@ -147,7 +129,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -162,8 +143,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 1</label>
@@ -179,7 +158,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -194,8 +172,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 2</label>
@@ -211,7 +187,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -226,8 +201,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 3</label>
@@ -243,7 +216,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -258,8 +230,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 4</label>
@@ -275,7 +245,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -290,8 +259,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 5</label>
@@ -307,7 +274,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -322,8 +288,6 @@
                         @enderror
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Content alternative title 6</label>
@@ -339,10 +303,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -357,7 +317,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="form-group bmd-form-group">
                         <label class="bmd-label-floating">Latitude</label>
@@ -372,7 +331,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -389,7 +347,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -406,18 +363,11 @@
                 </div>
             </div>
         </div>
-
-
         <button type="submit" class="btn btn-primary">Create settings</button>
     </form>
-
-
 @endsection
-
-
 @section('scripts')
     <script>
-
         var fileInputTextDiv = document.getElementById('file_input_text_div');
         var fileInput = document.getElementById('file_input_file');
         var fileInputText = document.getElementById('file_input_text');

@@ -2,14 +2,11 @@
 
 @section('content')
     <div class="col-md-12">
-
-
         @if(Session::has('flash_message'))
             <div class="alert alert-success">
                 {{ Session::get('flash_message') }}
             </div>
         @endif
-
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-title">Add Category</h4>

@@ -5,13 +5,11 @@
             <a href="/services/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Advertisement</a>
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -71,17 +69,13 @@
                                     <td>{{ $service->bedrooms }}</td>
                                     <td>{{ $service->toilets }}</td>
                                     <td><img src="/assets/img/services/thumbnails/{{$service->image}}" class="img-fluid"></td>
-
                                     <td>
-
                                         <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/services', [$service->id, 'edit']) }}">Edit</a>
                                         <form action="{{ url('/services', [$service->id]) }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-
                                             <button type="submit" class="btn btn-danger pull-left">Delete</button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -93,6 +87,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

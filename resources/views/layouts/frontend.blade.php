@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,11 +27,14 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="styleKsheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="styleKsheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:300,400,500,700,900"
+          rel="stylesheet">
 
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
@@ -70,17 +72,21 @@
             <nav class="navbar navbar-expand-lg p-0 g-px-15">
                 <div class="container g-pos-rel">
                     <a href="/" class="g-hidden-lg-up navbar-brand mr-0">
-                        <img class="d-block g-width-32 g-width-32--md"  src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
+                        <img class="d-block g-width-32 g-width-32--md"
+                             src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
                              data-header-fix-moment-exclude="d-block"
                              data-header-fix-moment-classes="d-none">
-
-                        <img class="d-none g-width-32 g-width-32--md" src="/assets/img/logo/originals/{{ $settings->logo }} " alt="Image Description"
+                    </a>
+                    <a href="/" class="g-hidden-lg-up navbar-brand mr-0">
+                        <img class="d-none g-width-32 g-width-32--md"
+                             src="/assets/img/logo/originals/{{ $settings->logo }} " alt="Image Description"
                              data-header-fix-moment-exclude="d-none"
                              data-header-fix-moment-classes="d-block">
                     </a>
 
                     <!-- Navigation -->
-                    <div class="collapse navbar-collapse align-items-center flex-sm-row" id="navBar" data-mobile-scroll-hide="true">
+                    <div class="collapse navbar-collapse align-items-center flex-sm-row" id="navBar"
+                         data-mobile-scroll-hide="true">
                         <ul class="js-scroll-nav navbar-nav align-items-lg-center text-uppercase g-font-weight-700 g-letter-spacing-1 g-font-size-12 g-pt-20 g-pt-0--lg mx-auto"
                             data-splitted-breakpoint="992">
 
@@ -93,17 +99,19 @@
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('ads', 'ads-single*') ? 'active' : ''}}">
                                 <a href="{{ route('ads') }}" class="mybutton nav-link p-0">Advertisement</a>
                             </li>
-
-
                             <!-- Logo -->
                             <li class="g-hidden-lg-down nav-logo-item g-mx-15--lg">
                                 <a href="/" class="js-go-to navbar-brand mr-0"
                                    data-type="static">
-                                    <img class="d-block g-width-32 g-width-32--md" src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
+                                    <img class="d-block g-width-32 g-width-32--md"
+                                         src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
                                          data-header-fix-moment-exclude="d-block"
                                          data-header-fix-moment-classes="d-none">
-
-                                    <img class="d-none g-width-32 g-width-32--md" src="/assets/img/logo/originals/{{ $settings->logo }} " alt="Image Description"
+                                </a>
+                                <a href="/" class="navbar-brand mr-0">
+                                    <img class="d-none g-width-32 g-width-32--md"
+                                         src="/assets/img/logo/originals/{{ $settings->logo }} "
+                                         alt="Image Description"
                                          data-header-fix-moment-exclude="d-none"
                                          data-header-fix-moment-classes="d-block">
                                 </a>
@@ -119,7 +127,8 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0" type="button"
+                    <button class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0"
+                            type="button"
                             aria-label="Toggle navigation"
                             aria-expanded="false"
                             aria-controls="navBar"
@@ -135,25 +144,27 @@
             </nav>
         </div>
     </header>
-    @yield('slider')
+@yield('slider')
 
-    @yield('about')
+@yield('about')
 
-    @yield('services')
+@yield('services')
 
-    @yield('projects')
+@yield('projects')
 
-    @yield('content')
+@yield('content')
 
-    @yield('partners')
-    <!-- Footer -->
+@yield('partners')
+<!-- Footer -->
     <footer>
         <div id="contact" class="g-py-80">
             <div class="container">
                 <div class="container text-center g-max-width-750 g-mb-70">
                     <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary">
-                        <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">Contact us</h3>
-                        <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">Keep in touch</h2>
+                        <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">
+                            Contact us</h3>
+                        <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">
+                            Keep in touch</h2>
                     </div>
                 </div>
 
@@ -161,34 +172,47 @@
                     <div class="col-md-9 g-mb-25 g-mb-0--md">
                         <form action="/send-message" method="post">
                             {{ csrf_field() }}
-                        <div class="row">
+                            <div class="row">
 
 
-                            <div class="col-sm-6 form-group g-mb-30">
-                                <input id="inputGroup1_1" class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10" type="text" placeholder="Your name" name="name">
+                                <div class="col-sm-6 form-group g-mb-30">
+                                    <input id="inputGroup1_1"
+                                           class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10"
+                                           type="text" placeholder="Your name" name="name">
+                                </div>
+
+                                <div class="col-sm-6 form-group g-mb-30">
+                                    <input id="inputGroup1_2"
+                                           class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10"
+                                           type="tel" placeholder="Your phone" name="phone">
+                                </div>
+
+                                <div class="col-sm-6 form-group g-mb-30">
+                                    <input id="inputGroup1_3"
+                                           class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10"
+                                           type="email" placeholder="Email *" name="email">
+                                </div>
+
+                                <div class="col-sm-6 form-group g-mb-30">
+                                    <input id="inputGroup1_4"
+                                           class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10"
+                                           type="text" placeholder="Subject" name="subject">
+                                </div>
+
+                                <div class="col-md-12 form-group g-mb-30">
+                                    <textarea id="inputGroup1_5"
+                                              class="form-control g-resize-none g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10"
+                                              rows="4" placeholder="Message" name="message"></textarea>
+                                </div>
+
                             </div>
 
-                            <div class="col-sm-6 form-group g-mb-30">
-                                <input id="inputGroup1_2" class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10" type="tel" placeholder="Your phone" name="phone">
+                            <div class="text-center">
+                                <button
+                                    class="btn u-btn-primary btn-md text-uppercase g-line-height-1 g-font-weight-700 g-font-size-11 rounded-0 g-py-12 g-px-25 mb-0"
+                                    type="submit" role="button">Send message
+                                </button>
                             </div>
-
-                            <div class="col-sm-6 form-group g-mb-30">
-                                <input id="inputGroup1_3" class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10" type="email" placeholder="Email *" name="email">
-                            </div>
-
-                            <div class="col-sm-6 form-group g-mb-30">
-                                <input id="inputGroup1_4" class="form-control h-100 g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10" type="text" placeholder="Subject" name="subject">
-                            </div>
-
-                            <div class="col-md-12 form-group g-mb-30">
-                                <textarea id="inputGroup1_5" class="form-control g-resize-none g-font-size-14 g-theme-bg-gray-light-v2 g-brd-none g-rounded-1 g-py-14 g-px-10" rows="4" placeholder="Message" name="message"></textarea>
-                            </div>
-
-                        </div>
-
-                        <div class="text-center">
-                            <button class="btn u-btn-primary btn-md text-uppercase g-line-height-1 g-font-weight-700 g-font-size-11 rounded-0 g-py-12 g-px-25 mb-0" type="submit" role="button">Send message</button>
-                        </div>
                         </form>
                     </div>
 
@@ -196,20 +220,24 @@
                         <address class="row text-center">
                             <div class="col-sm-4 col-md-12 g-mb-30">
                                 <i class="icon-directions icon d-inline-block g-font-size-20 g-color-primary g-mb-7"></i>
-                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">Address</h3>
+                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">
+                                    Address</h3>
                                 <strong class="g-font-size-14 g-color-black">{{ $settings->address }}</strong>
                             </div>
 
                             <div class="col-sm-4 col-md-12 g-mb-30">
                                 <i class="icon-call-in icon d-inline-block g-font-size-20 g-color-primary g-mb-7"></i>
-                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400g-mb-5">Phone number</h3>
+                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400g-mb-5">
+                                    Phone number</h3>
                                 <strong class="g-font-size-14 g-color-black">{{ $settings->phone }}</strong>
                             </div>
 
                             <div class="col-sm-4 col-md-12">
                                 <i class="icon-envelope-open icon d-inline-block g-font-size-20 g-color-primary g-mb-7"></i>
-                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">Email</h3>
-                                <a class="g-color-black g-color-black--hover"><strong class="g-font-size-14">{{ $settings->email }}</strong></a>
+                                <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">
+                                    Email</h3>
+                                <a class="g-color-black g-color-black--hover"><strong
+                                        class="g-font-size-14">{{ $settings->email }}</strong></a>
                             </div>
                         </address>
                     </div>
@@ -218,16 +246,18 @@
         </div>
 
         <!-- Google (Map) [custom] -->
-       @yield('map')
+        @yield('map')
 
         <div class="text-center g-color-gray-dark-v5 g-theme-bg-blue-dark-v1 g-py-70">
             <a class="d-block g-width-140 mx-auto g-mb-30" href="/">
-                <img class="img-fluid logo-height" src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image description">
+                <img class="img-fluid logo-height" src="/assets/img/logo/originals/{{ $settings->logo }}"
+                     alt="Image description">
             </a>
 
             <ul class="list-inline d-inline-block mb-0">
                 <li class="list-inline-item g-mr-10">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in" href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
+                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in"
+                       href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
                 </li>
             </ul>
         </div>
@@ -278,16 +308,8 @@
 <script src="/frontend/js/waypoints.min.js"></script>
 <script src="/frontend/js/parallax.min.js"></script>
 
-
-
-
-<!-- JS Customization -->
-
-
-<!-- JS Plugins Init. -->
-
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         App.init();
         App.initCounter();
         App.initParallaxBg();
@@ -302,10 +324,6 @@
     function initMap() {
         $.HSCore.components.HSGMap.init('.js-g-map');
     }
-
-
-
-
 
     $(document).on('ready', function () {
         // initialization of carousel
@@ -332,7 +350,7 @@
     });
 
 
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         // initialization of HSScrollNav
         $.HSCore.components.HSScrollNav.init($('.js-scroll-nav'), {
             duration: 700
@@ -347,7 +365,7 @@
 </script>
 
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         $('.counter').counterUp({
             delay: 10,
             time: 6000
@@ -355,15 +373,11 @@
     });
 </script>
 
-
 <script type="text/javascript">
-    jQuery(document).ready( function() {
-        jQuery('#grid-container').cubeportfolio({
-            // options
-        });
+    jQuery(document).ready(function () {
+        jQuery('#grid-container').cubeportfolio({});
     });
 </script>
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async></script>
 </body>

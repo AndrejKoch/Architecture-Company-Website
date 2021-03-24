@@ -1,20 +1,15 @@
 @extends('layouts.dashboard')
 @section('content')
-
     <div class="row">
         <div class="col-md-12">
-
             <a href="/projects/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Project</a>
-
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -32,7 +27,6 @@
                                 <td>Description</td>
                                 <td>Action</td>
                             </tr>
-
                             @foreach($projects as $project)
                                 <tr>
                                     <td>{{ $project->id }}</td>
@@ -44,8 +38,6 @@
                                         @else
                                             N/A
                                         @endif</td>
-
-
                                     <td>
                                         <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/projects', [$project->id, 'edit']) }}">Edit</a>
                                         <form action="{{ url('projects', [$project->id]) }}" method="POST">
@@ -54,23 +46,13 @@
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
-
                                 </tr>
                             @endforeach
-
                         </table>
                         {!! $projects->links() !!}
                     </div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
-
 @endsection
-
-
-

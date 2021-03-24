@@ -5,13 +5,11 @@
             <a href="/user/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add User</a>
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -47,17 +45,13 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->getRole->name }}</td>
-
                                     <td>
-
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/user', [$user->id, 'edit']) }}">Edit</a>
+                                        <a  class="btn btn-warning pull-left" href="{{ url('/user', [$user->id, 'edit']) }}">Edit</a>
                                         <form action="{{ url('/user', [$user->id]) }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-
                                             <button type="submit" class="btn btn-danger pull-left">Delete</button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -67,10 +61,5 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
-
 @endsection

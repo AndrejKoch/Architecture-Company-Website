@@ -1,8 +1,6 @@
 @extends('layouts.frontend')
-
 @section('content')
     <section id="ads" class="g-py-100">
-
         <div class="container">
             <div class="row">
                 @foreach($services as $service)
@@ -11,51 +9,48 @@
                             <div class="thumbnail-img">
                                 <div class="overflow-hidden">
                                     <a href="/ads-single/{{$service->slug}}">
-                                        <img class="img-responsive"
-                                             style="width: 100%; height: 220px; object-fit: cover;"
-                                             src="assets/img/services/thumbnails/{{$service->image}}" alt=""/>
+                                        <img class="img-responsive ads-style" src="assets/img/services/thumbnails/{{$service->image}}" alt=""/>
                                     </a>
                                 </div>
-                                <a class="btn-more hover-effect"
-                                   href="/ads-single/{{$service->slug}}">{{ $service->link }}</a>
+                                <a class="btn-more hover-effect" href="/ads-single/{{$service->slug}}">
+                                    {{ $service->link }}
+                                </a>
                             </div>
-                            <div class="caption text-center" style="margin-left: 2%; margin-bottom: 5%;">
+                            <div class="caption text-center ads-margins">
                                 <h4><a class="g-color-black-opacity-0_7 hover-effect"
                                        href="/ads-single/{{$service->slug}}">{{$service->name}}</a>
                                 </h4>
                             </div>
-                            <div class="container" style="text-align: center;">
-
+                            <div class="container text-center">
                                 <ul class="list-inline">
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5" style="color: #c74645;">grid_on</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">grid_on</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p>{{$service->size}}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5" style="color: #c74645;">local_hotel</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">local_hotel</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->bedrooms }}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5" style="color: #c74645;">bathtub</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">bathtub</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->toilets }}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5" style="color: #c74645;">euro_symbol</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">euro_symbol</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p> {{ $service->price }}</p>
                                     </li>
                                 </ul>
-
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <i class="material-icons" style="color: #c74645;">room</i>
+                                        <i class="material-icons icon-color-custom">room</i>
                                     </li>
                                     <li class="list-inline-item">
                                         <p> {{ $service->location }}</p>

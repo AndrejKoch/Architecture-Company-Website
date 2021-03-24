@@ -1,15 +1,13 @@
 @extends('layouts.frontend')
-
 @section('content')
     <section id="projects" class="g-theme-bg-gray-light-v2 g-py-100">
         <div class="cube-portfolio container margin-bot-60">
             <div id="grid-container" class="cbp-l-grid-agency">
-
                 @foreach($services->gallery as $gall)
                     <div class="cbp-item graphic">
                         <div class="cbp-caption">
                             <div class="cbp-caption-defaultWrap">
-                                <img  style="height: 250px;object-fit: cover;" src="/assets/img/gallery/thumbnails/{{$gall->image}}" alt="">
+                                <img class="gallery-custom" src="/assets/img/gallery/thumbnails/{{$gall->image}}" alt="">
                             </div>
                             <div class="cbp-caption-activeWrap">
                                 <div class="cbp-l-caption-alignCenter">
@@ -24,7 +22,6 @@
                     </div>
                 @endforeach
             </div>
-
             <div class="container g-mt-45">
                 <div class="col-md-12">
                     <div class="mb-5">

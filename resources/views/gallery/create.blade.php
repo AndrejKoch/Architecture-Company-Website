@@ -8,9 +8,6 @@
     <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12">
-
-
-
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-6">
@@ -26,11 +23,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-2">
                         <div class="form-group bmd-form-group">
-
                             <div class="file_input_div">
                                 <div class="file_input">
                                     <label
@@ -49,11 +44,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-
                             <p>Select project</p>
                             <select class="form-control @error('project_id') is-invalid @enderror" name="project_id">
                                 @if($projects)
@@ -71,13 +64,10 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
                             <p>Select advertisement</p>
-
                             <select class="form-control @error('service_id') is-invalid @enderror" name="service_id">
                                 @if($services)
                                     <option></option>
@@ -94,21 +84,16 @@
                         </div>
                     </div>
                 </div>
-
                 @if($errors->has('image'))
                     <span style="color: red">{{ $errors->first('image') }}</span>
                 @endif
-
                 <button type="submit" class="btn btn-primary">Create new gallery image</button>
-
             </div>
         </div>
     </form>
-
 @endsection
 @section('scripts')
     <script>
-
         var fileInputTextDiv = document.getElementById('file_input_text_div');
         var fileInput = document.getElementById('file_input_file');
         var fileInputText = document.getElementById('file_input_text');

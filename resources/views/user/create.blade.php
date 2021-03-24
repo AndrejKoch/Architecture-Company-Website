@@ -1,14 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
     <div class="col-md-12">
-
-
         @if(Session::has('flash_message'))
             <div class="alert alert-success">
                 {{ Session::get('flash_message') }}
             </div>
         @endif
-
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-title">Add User</h4>
@@ -45,11 +42,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">
-
                                 <select class="form-control  @error('role_id') is-invalid @enderror" name="role_id"
                                         value="{{ old('role_id') }}">
                                     <option value="">Select role</option>
@@ -65,8 +60,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
@@ -90,7 +83,6 @@
                                             <strong>{{ $errors->first('re_password') }}</strong>
                                     </span>
                                 @enderror
-
                             </div>
                         </div>
                     </div>
@@ -101,4 +93,3 @@
         </div>
     </div>
 @endsection
-

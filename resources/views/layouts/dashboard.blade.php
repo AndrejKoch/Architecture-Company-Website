@@ -19,15 +19,13 @@
     <!-- CSS Files -->
     <link href="/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet"/>
     <link href="/assets/css/custom.css" rel="stylesheet"/>
+    <link href="/frontend/css/app.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
     <!-- CSS Just for demo purpose, don't include it in your project -->
-
 </head>
-
 <body class="">
 <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="/assets/img/sidebar-1.jpg">
-
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item">
@@ -128,7 +126,6 @@
                     <span class="navbar-toggler-icon icon-bar"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end">
-
                     <ul class="navbar-nav">
                         <li class="nav-item">
                         <li class="nav-item dropdown">
@@ -432,8 +429,6 @@
 
     });
 </script>
-
 @yield('scripts')
 </body>
-
 </html>

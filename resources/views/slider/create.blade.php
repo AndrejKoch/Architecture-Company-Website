@@ -21,15 +21,11 @@
                                     </span>
                             @enderror
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="row">
                     <div class="col-md-2">
                         <div class="form-group bmd-form-group">
-
                             <div class="file_input_div">
                                 <div class="file_input">
                                     <label
@@ -45,15 +41,12 @@
                                     <label class="mdl-textfield__label" for="file_input_text"></label>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 @if($errors->has('image'))
                     <span style="color: red">{{ $errors->first('image') }}</span>
                 @endif
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -68,7 +61,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -83,22 +75,13 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
                 <button type="submit" class="btn btn-primary">Create new slider</button>
-
             </div>
         </div>
     </form>
-
 @endsection
 @section('scripts')
     <script>
-
         var fileInputTextDiv = document.getElementById('file_input_text_div');
         var fileInput = document.getElementById('file_input_file');
         var fileInputText = document.getElementById('file_input_text');

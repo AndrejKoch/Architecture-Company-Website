@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
@@ -31,7 +29,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
@@ -46,7 +43,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                             <select type="text" class="form-control @error('role_id') is-invalid @enderror"
@@ -62,7 +58,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
@@ -96,4 +91,3 @@
         </div>
     </div>
 @endsection
-

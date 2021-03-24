@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
@@ -30,11 +28,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-2">
                             <div class="form-group bmd-form-group">
-
                                 <div class="file_input_div">
                                     <div class="file_input">
                                         <label
@@ -55,11 +51,9 @@
                             </div>
                         </div>
                     </div>
-
                     @if($errors->has('image'))
                         <span style="color: red">{{ $errors->first('image') }}</span>
                     @endif
-
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                             <p>Select project</p>
@@ -77,7 +71,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                             <p>Select advertisement</p>
@@ -95,8 +88,6 @@
                             @enderror
                         </div>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary">Update gallery image</button>
                 </form>
             </div>
@@ -105,7 +96,6 @@
 @endsection
 @section('scripts')
     <script>
-
         var fileInputTextDiv = document.getElementById('file_input_text_div');
         var fileInput = document.getElementById('file_input_file');
         var fileInputText = document.getElementById('file_input_text');
@@ -137,4 +127,3 @@
         }
     </script>
 @endsection
-

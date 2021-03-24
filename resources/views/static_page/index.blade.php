@@ -5,13 +5,11 @@
             <a href="/static_page/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Card</a>
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -47,25 +45,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($static_page as $static_page)
+                            @foreach($static_page as $sp)
                                 <tr>
-                                    <td>{{ $static_page->id }}</td>
-                                    <td>{{ $static_page->title }}</td>
-                                    <td>{!! $static_page->description !!}</td>
-                                    <td>{!! $static_page->link !!}</td>
-                                    <td><img src="/assets/img/static_page/thumbnails/{{$static_page->image}}" class="img-fluid"></td>
-                                    <td>{!! $static_page->icon!!}</td>
-
+                                    <td>{{ $sp->id }}</td>
+                                    <td>{{ $sp->title }}</td>
+                                    <td>{!! $sp->description !!}</td>
+                                    <td>{!! $sp->link !!}</td>
+                                    <td><img src="/assets/img/static_page/thumbnails/{{$sp->image}}" class="img-fluid"></td>
+                                    <td>{!! $sp->icon!!}</td>
                                     <td>
-
-                                        <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/static_page', [$static_page->id, 'edit']) }}">Edit</a>
-                                        <form action="{{ url('/static_page', [$static_page->id]) }}" method="post">
+                                        <a class="btn btn-warning pull-left" href="{{ url('/static_page', [$sp->id, 'edit']) }}">Edit</a>
+                                        <form action="{{ url('/static_page', [$sp->id]) }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-
                                             <button type="submit" class="btn btn-danger pull-left">Delete</button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -76,6 +70,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

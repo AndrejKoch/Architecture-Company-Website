@@ -21,15 +21,11 @@
                                     </span>
                             @enderror
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
-
                             <textarea type="text" class="form-control @error('description') is-invalid @enderror"
                                       name="description" id="description">{{ old('description') }}</textarea>
                             @error('description')
@@ -40,7 +36,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -55,7 +50,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -70,7 +64,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -85,7 +78,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -100,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -115,7 +106,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -130,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-2">
                         <div class="form-group bmd-form-group">
@@ -153,20 +142,13 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
                 @if($errors->has('image'))
                     <span style="color: red">{{ $errors->first('image') }}</span>
                 @endif
                 <button type="submit" class="btn btn-primary">Create new advertisement</button>
-
             </div>
         </div>
     </form>
-
 @endsection
 @section('scripts')
     <script>

@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
@@ -60,8 +58,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary">Update counter</button>
                 </form>
             </div>

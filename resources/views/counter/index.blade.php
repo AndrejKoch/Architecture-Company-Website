@@ -1,20 +1,15 @@
 @extends('layouts.dashboard')
 @section('content')
-
     <div class="row">
         <div class="col-md-12">
-
             <a href="/counter/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Counter</a>
-
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -31,14 +26,12 @@
                                 <td>Number</td>
                                 <td>Action</td>
                             </tr>
-
                             @foreach($counter as $counter)
                                 <tr>
                                     <td>{{ $counter->id }}</td>
                                     <td>{{ $counter->name }}</td>
                                     <td>{{ $counter->icon }}</td>
                                     <td>{{ $counter->number }}</td>
-
                                     <td>
                                         <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/counter', [$counter->id, 'edit']) }}">Edit</a>
                                         <form action="{{ url('counter', [$counter->id]) }}" method="POST">
@@ -55,9 +48,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
-
-
-

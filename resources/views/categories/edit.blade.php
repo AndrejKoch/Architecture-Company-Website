@@ -11,7 +11,6 @@
                 {{ Session::get('flash_message') }}
             </div>
         @endif
-
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-title">Edit Category</h4>
@@ -83,5 +82,4 @@
             </div>
         </div>
     </div>
-
 @endsection

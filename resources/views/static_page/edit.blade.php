@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
@@ -30,11 +28,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group bmd-form-group">
-
                             <textarea type="text" class="form-control @error('description') is-invalid @enderror"
                                       name="description" id="description">{!! $static_page->description !!}</textarea>
                                 @error('description')
@@ -45,8 +41,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
@@ -61,11 +55,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-2">
                             <div class="form-group bmd-form-group">
-
                                 <div class="file_input_div">
                                     <div class="file_input">
                                         <label
@@ -82,11 +74,9 @@
                                         <label class="mdl-textfield__label" for="file_input_text"></label>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
@@ -101,12 +91,10 @@
                             </div>
                         </div>
                     </div>
-
                     @if($errors->has('image'))
                         <span style="color: red">{{ $errors->first('image') }}</span>
                     @endif
-
-                    <button type="submit" class="btn btn-primary">Save page</button>
+                    <button type="submit" class="btn btn-primary">Save card</button>
                 </form>
             </div>
         </div>
@@ -147,4 +135,3 @@
         }
     </script>
 @endsection
-

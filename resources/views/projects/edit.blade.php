@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 @section('content')
-
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
@@ -28,10 +26,8 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
-
                             <div class="file_input_div">
                                 <div class="file_input">
                                     <label
@@ -50,11 +46,9 @@
                             </div>
                         </div>
                     </div>
-
                     @if($errors->has('image'))
                         <span style="color: red">{{ $errors->first('image') }}</span>
                     @endif
-
                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                             <select type="text" class="form-control @error('category_id') is-invalid @enderror"
@@ -71,7 +65,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="col-md-12">
                         <div class="form-group bmd-form-group">
                             <textarea type="text" class="form-control @error('description') is-invalid @enderror"
@@ -83,8 +76,6 @@
                             @enderror
                         </div>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary">Update project</button>
                 </form>
             </div>
@@ -127,4 +118,3 @@
         }
     </script>
 @endsection
-

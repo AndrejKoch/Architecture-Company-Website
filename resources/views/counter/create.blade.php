@@ -39,7 +39,6 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
@@ -54,10 +53,8 @@
                         </div>
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Create new counter</button>
             </div>
         </div>
     </form>
-
 @endsection

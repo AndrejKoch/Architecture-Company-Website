@@ -1,20 +1,15 @@
 @extends('layouts.dashboard')
 @section('content')
-
     <div class="row">
         <div class="col-md-12">
-
             <a href="/gallery/create" class="btn btn-round btn-info"><i class="material-icons">add_circle</i> Add Gallery</a>
-
         </div>
     </div>
-
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ Session::get('flash_message') }}
         </div>
     @endif
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -32,7 +27,6 @@
                                 <td>Advertisement Name</td>
                                 <td>Action</td>
                             </tr>
-
                             @foreach($gallery as $galler)
                                 <tr>
                                     <td>{{ $galler->id }}</td>
@@ -48,7 +42,6 @@
                                     @else
                                         n/a
                                         @endif</td>
-
                                     <td>
                                         <a  class="btn btn-warning pull-left" style="margin-top: 6px" href="{{ url('/gallery', [$galler->id, 'edit']) }}">Edit</a>
                                         <form action="{{ url('gallery', [$galler->id]) }}" method="POST">
@@ -66,9 +59,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
-
-
-

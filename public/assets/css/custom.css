@@ -6,3 +6,29 @@ color: #c74645 !important;
     height: 64px !important;
 }
 
+.ads-style {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+}
+
+.ads-margins {
+    margin-left: 2% !important;
+    margin-bottom: 5% !important;
+}
+
+.gallery-custom {
+    height: 250px !important;
+    object-fit: cover !important;
+}
+
+.service-custom {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+}
+
+.partner-custom {
+    max-height: 100px !important;
+    max-width: 150px !important;
+}
