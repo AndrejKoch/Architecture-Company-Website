@@ -32,7 +32,8 @@ class FrontEndController extends Controller
             'sliders' => Slider::all(),
             'projects' => Projects::all(),
             'partners' => Partners::all(),
-            'staticpages' => StaticPage::all()];
+            'staticpages' => StaticPage::all()
+        ];
         return view('frontend.homepage')->with($data);
     }
 
@@ -40,26 +41,20 @@ class FrontEndController extends Controller
     public function project($project_slug)
     {
         $project = Projects::with('gallery')->where('slug', $project_slug)->first();
-        $settings = Settings::find(1);
-
-        $data = ["settings" => $settings, "project" => $project];
+        $data = ["settings" =>  $this->settings, "project" => $project];
         return view('frontend.projects')->with($data);
     }
 
     public function services($service_slug)
     {
         $services = Services::with('gallery')->where('slug', $service_slug)->first();
-        $settings = Settings::find(1);
-
-        $data = ["settings" => $settings, "services" => $services];
+        $data = ["settings" =>  $this->settings, "services" => $services];
         return view('frontend.adssingle')->with($data);
     }
 
     public function projects(){
         $projects = Projects::orderBy('id', 'desc')->paginate(9);
-        $settings = Settings::find(1);
-
-        $data = ["settings" => $settings, "projects" => $projects];
+        $data = ["settings" =>  $this->settings, "projects" => $projects];
         return view('frontend.projectss')->with($data);
     }
 

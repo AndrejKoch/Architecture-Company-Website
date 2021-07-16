@@ -3,8 +3,12 @@
     <section id="projects" class="g-pt-100 g-pb-100--md">
         <div class="container text-center g-max-width-750 g-mb-70">
             <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary">
-                <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle3 }}</h3>
-                <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0"> {{ $settings->calttitle3 }}</h2>
+                @isset($settings->ctitle3)
+                    <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle3 }}</h3>
+                @endisset
+                @isset($settings->calttile3)
+                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0"> {{ $settings->calttitle3 }}</h2>
+                @endisset
             </div>
         </div>
         <div class="container-fluid px-0">

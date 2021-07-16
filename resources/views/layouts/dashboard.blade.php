@@ -137,9 +137,6 @@
                                 </p>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <div class="dropdown-divider"></div>
                                 <form action="{{ url('/logout') }}" method="post">
                                     {{ csrf_field() }}
                                     <button type="submit" class="dropdown-item" href="#">Log out</button>
