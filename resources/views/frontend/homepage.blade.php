@@ -14,8 +14,12 @@
         <div class="u-bg-overlay__inner g-absolute-centered w-100">
             <div class="container text-center g-max-width-750">
                 <div class="text-uppercase u-heading-v2-4--bottom u-promo-title g-brd-primary">
-                    <h3 class="h3 g-letter-spacing-7 g-font-size-12 g-font-weight-400 g-color-white g-mb-25">{{ $settings->link }}</h3>
-                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-3 g-font-size-75 g-color-white mb-0">{{ $settings->title }}</h2>
+                    @isset($settings->link)
+                        <h3 class="h3 g-letter-spacing-7 g-font-size-12 g-font-weight-400 g-color-white g-mb-25">{{ $settings->link }}</h3>
+                    @endisset
+                    @isset($settings->title)
+                        <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-3 g-font-size-75 g-color-white mb-0">{{ $settings->title }}</h2>
+                    @endisset
                 </div>
             </div>
         </div>
@@ -26,8 +30,12 @@
     <section id="about" class="g-pt-100 g-pb-100--md">
         <div class="container text-center g-max-width-750 g-mb-70">
             <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary">
-                <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle1 }}</h3>
-                <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">{{ $settings->calttitle1 }}</h2>
+                @isset($settings->ctitle1)
+                    <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle1 }}</h3>
+                @endisset
+                @isset($settings->caltitle1)
+                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0">{{ $settings->calttitle1 }}</h2>
+                @endisset
             </div>
         </div>
         <div class="container px-0">
@@ -57,8 +65,12 @@
     <section id="services" class="g-theme-bg-blue-dark-v3 g-py-100">
         <div class="container text-center g-max-width-750 g-mb-70">
             <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary g-mb-30">
-                <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25"> {{ $settings->ctitle2 }} </h3>
-                <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md g-color-white mb-0">{{ $settings->calttitle2 }} </h2>
+                @isset($settings->ctitle2)
+                    <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25"> {{ $settings->ctitle2 }} </h3>
+                @endisset
+                @isset($settings->caltitle2)
+                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md g-color-white mb-0">{{ $settings->calttitle2 }} </h2>
+                @endisset
             </div>
         </div>
         <div class="col-md-12">
@@ -77,31 +89,32 @@
                                    href="/ads-single/{{$service->slug}}">{{ $service->link }}</a>
                             </div>
                             <div class="caption text-center ads-margins">
-                                <h4><a class="g-color-white hover-effect" href="/ads-single/{{$service->slug}}">{{$service->name}}</a>
+                                <h4><a class="g-color-white hover-effect"
+                                       href="/ads-single/{{$service->slug}}">{{$service->name}}</a>
                                 </h4>
                             </div>
                             <div class="container text-center">
                                 <ul class="list-inline">
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5 icon-color-custom" >grid_on</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">grid_on</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p class="color-light">{{$service->size}}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5 icon-color-custom" >local_hotel</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">local_hotel</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p class="color-light"> {{ $service->bedrooms }}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5 icon-color-custom" >bathtub</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">bathtub</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p class="color-light"> {{ $service->toilets }}</p>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
-                                        <i class="material-icons margin-left-5 icon-color-custom" >euro_symbol</i>
+                                        <i class="material-icons margin-left-5 icon-color-custom">euro_symbol</i>
                                     </li>
                                     <li class="list-inline-item margin-left-5">
                                         <p class="color-light"> {{ $service->price }}</p>
@@ -110,7 +123,7 @@
 
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <i class="material-icons icon-color-custom" >room</i>
+                                        <i class="material-icons icon-color-custom">room</i>
                                     </li>
                                     <li class="list-inline-item">
                                         <p class="color-light"> {{ $service->location }}</p>
@@ -129,8 +142,12 @@
     <section id="projects" class="g-pt-100 g-pb-100--md">
         <div class="container text-center g-max-width-750 g-mb-70">
             <div class="text-uppercase u-heading-v2-4--bottom g-brd-primary">
-                <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle3 }}</h3>
-                <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0"> {{ $settings->calttitle3 }}</h2>
+                @isset($settings->ctitle3)
+                    <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle3 }}</h3>
+                @endisset
+                @isset($settings->caltitle3)
+                    <h2 class="u-heading-v2__title g-line-height-1 g-letter-spacing-2 g-font-size-30 g-font-size-40--md mb-0"> {{ $settings->calttitle3 }}</h2>
+                @endisset
             </div>
         </div>
         <div class="container-fluid px-0">
@@ -162,7 +179,9 @@
             <div class="row">
                 <div class="container text-center g-max-width-750 g-mb-70">
                     <div class="text-uppercase g-brd-primary">
-                        <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle4 }}</h3>
+                        @isset($settings->ctitle5)
+                            <h3 class="h3 g-letter-spacing-5 g-font-size-12 g-font-weight-400 g-color-primary g-mb-25">{{ $settings->ctitle4 }}</h3>
+                        @endisset
                     </div>
                 </div>
                 <div class="col-lg-12 g-mb-40 g-mb-0--lg">
@@ -171,9 +190,10 @@
                             @foreach($partners->take(12) as $partner)
                                 <div class="col-md-2">
                                     <div class="g-brd-left g-brd-bottom g-theme-brd-blue-dark-v5 g-py-60">
-                                        <img class="img-fluid g-opacity-0_6 g-opacity-1--hover g-transition-0_2 partner-custom"
-                                             src="assets/img/partners/medium/{{$partner->image}}"
-                                             alt="">
+                                        <img
+                                            class="img-fluid g-opacity-0_6 g-opacity-1--hover g-transition-0_2 partner-custom"
+                                            src="assets/img/partners/medium/{{$partner->image}}"
+                                            alt="">
                                     </div>
                                 </div>
                             @endforeach
@@ -189,10 +209,16 @@
     <div class="g-pos-rel g-height-400">
         <div id="map-canvas" class="js-g-map g-pos-abs w-100 h-100"
              data-type="custom"
-             data-lat="{{ $settings->lat }}"
-             data-lng="{{ $settings->lng }}"
+             data-lat="@isset($settings->lat)
+             {{ $settings->lat }}
+             @endisset"
+             data-lng="@isset($settings->lng)
+             {{ $settings->lng }}
+             @endisset"
              data-zoom="18"
-             data-title="{{ $settings->title }}"
+             data-title="@isset($settings->title)
+             {{ $settings->title }}
+             @endisset"
              data-styles='[
                  ["", "", [{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]],
                  ["", "labels", [{"visibility":"on"}]],

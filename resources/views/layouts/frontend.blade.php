@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Title -->
-    <title>{{ $settings->title }}</title>
+    <!-- Title -->@isset($settings->title)
+        <title>{{ $settings->title }}</title>
+@endisset
 
-    <!-- Required Meta Tags Always Come First -->
+<!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="{{$settings->title}}">
+    <meta itemprop="name" content="@isset($settings->title)
+    {{$settings->title}}
+    @endisset">
     <meta itemprop="description" content="Hard-coded description">
-    <meta itemprop="image" content="https://modus.test/assets/img/logo/thumbnails/{{$settings->logo}}">
+    <meta itemprop="image" content="@isset($settings->logo)
+        https://modus.test/assets/img/logo/thumbnails/{{$settings->logo}}
+    @endisset">
 
     <!-- Open Graph data -->
     <meta property="fb:app_id" content=""/>
     <meta property="og:locale" content="mk_MK"/>
-    <meta property="og:title" content="{{$settings->title}}"/>
+    <meta property="og:title" content="@isset($settings->title)
+    {{$settings->title}}
+    @endisset"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{$settings->mainurl}}"/>
-    <meta property="og:image" content="https://modus.test/assets/img/logo/originals/{{$settings->logo}}"/>
+    <meta property="og:url" content="@isset($settings->mainurl)
+    {{$settings->mainurl}}
+    @endisset"/>
+    <meta property="og:image" content="@isset($settings->logo)
+        https://modus.test/assets/img/logo/originals/{{$settings->logo}}
+    @endisset"/>
     <meta property="og:description" content="Hard-coded description"/>
-    <meta property="og:site_name" content="{{$settings->title}}"/>
+    <meta property="og:site_name" content="@isset($settings->title)
+    {{$settings->title}}
+    @endisset"/>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
@@ -72,16 +85,20 @@
             <nav class="navbar navbar-expand-lg p-0 g-px-15">
                 <div class="container g-pos-rel">
                     <a href="/" class="g-hidden-lg-up navbar-brand mr-0">
-                        <img class="d-block g-width-32 g-width-32--md"
-                             src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
-                             data-header-fix-moment-exclude="d-block"
-                             data-header-fix-moment-classes="d-none">
+                        @isset($settings->logo)
+                            <img class="d-block g-width-32 g-width-32--md"
+                                 src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
+                                 data-header-fix-moment-exclude="d-block"
+                                 data-header-fix-moment-classes="d-none">
+                        @endisset
                     </a>
                     <a href="/" class="g-hidden-lg-up navbar-brand mr-0">
-                        <img class="d-none g-width-32 g-width-32--md"
-                             src="/assets/img/logo/originals/{{ $settings->logo }} " alt="Image Description"
-                             data-header-fix-moment-exclude="d-none"
-                             data-header-fix-moment-classes="d-block">
+                        @isset($settings->logo)
+                            <img class="d-none g-width-32 g-width-32--md"
+                                 src="/assets/img/logo/originals/{{ $settings->logo }} " alt="Image Description"
+                                 data-header-fix-moment-exclude="d-none"
+                                 data-header-fix-moment-classes="d-block">
+                        @endisset
                     </a>
 
                     <!-- Navigation -->
@@ -103,17 +120,22 @@
                             <li class="g-hidden-lg-down nav-logo-item g-mx-15--lg">
                                 <a href="/" class="js-go-to navbar-brand mr-0"
                                    data-type="static">
-                                    <img class="d-block g-width-32 g-width-32--md"
-                                         src="/assets/img/logo/originals/{{ $settings->logo }}" alt="Image Description"
-                                         data-header-fix-moment-exclude="d-block"
-                                         data-header-fix-moment-classes="d-none">
+                                    @isset($settings->logo)
+                                        <img class="d-block g-width-32 g-width-32--md"
+                                             src="/assets/img/logo/originals/{{ $settings->logo }}"
+                                             alt="Image Description"
+                                             data-header-fix-moment-exclude="d-block"
+                                             data-header-fix-moment-classes="d-none">
+                                    @endisset
                                 </a>
                                 <a href="/" class="navbar-brand mr-0">
-                                    <img class="d-none g-width-32 g-width-32--md"
-                                         src="/assets/img/logo/originals/{{ $settings->logo }} "
-                                         alt="Image Description"
-                                         data-header-fix-moment-exclude="d-none"
-                                         data-header-fix-moment-classes="d-block">
+                                    @isset($settings->logo)
+                                        <img class="d-none g-width-32 g-width-32--md"
+                                             src="/assets/img/logo/originals/{{ $settings->logo }} "
+                                             alt="Image Description"
+                                             data-header-fix-moment-exclude="d-none"
+                                             data-header-fix-moment-classes="d-block">
+                                    @endisset
                                 </a>
                             </li>
                             <li class="nav-item g-mx-30--lg g-mb-7 g-mb-0--lg {{ request()->is('projects', 'project*') ? 'active' : ''}}">
@@ -221,15 +243,19 @@
                             <div class="col-sm-4 col-md-12 g-mb-30">
                                 <i class="icon-directions icon d-inline-block g-font-size-20 g-color-primary g-mb-7"></i>
                                 <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">
-                                    Address</h3>
-                                <strong class="g-font-size-14 g-color-black">{{ $settings->address }}</strong>
+                                    Address
+                                    @isset($settings->address)
+                                        <strong class="g-font-size-14 g-color-black">{{ $settings->address }}</strong>
+                                @endisset
                             </div>
 
                             <div class="col-sm-4 col-md-12 g-mb-30">
                                 <i class="icon-call-in icon d-inline-block g-font-size-20 g-color-primary g-mb-7"></i>
                                 <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400g-mb-5">
                                     Phone number</h3>
-                                <strong class="g-font-size-14 g-color-black">{{ $settings->phone }}</strong>
+                                @isset($settings->phone)
+                                    <strong class="g-font-size-14 g-color-black">{{ $settings->phone }}</strong>
+                                @endisset
                             </div>
 
                             <div class="col-sm-4 col-md-12">
@@ -237,7 +263,9 @@
                                 <h3 class="text-uppercase g-font-size-12 g-color-gray-dark-v5 g-font-weight-400 g-mb-5">
                                     Email</h3>
                                 <a class="g-color-black g-color-black--hover"><strong
+                                        @isset($settings->email)
                                         class="g-font-size-14">{{ $settings->email }}</strong></a>
+                                @endisset
                             </div>
                         </address>
                     </div>
@@ -250,14 +278,18 @@
 
         <div class="text-center g-color-gray-dark-v5 g-theme-bg-blue-dark-v1 g-py-70">
             <a class="d-block g-width-140 mx-auto g-mb-30" href="/">
-                <img class="img-fluid logo-height" src="/assets/img/logo/originals/{{ $settings->logo }}"
-                     alt="Image description">
+                @isset($settings->logo)
+                    <img class="img-fluid logo-height" src="/assets/img/logo/originals/{{ $settings->logo }}"
+                         alt="Image description">
+                @endisset
             </a>
 
             <ul class="list-inline d-inline-block mb-0">
                 <li class="list-inline-item g-mr-10">
-                    <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in"
-                       href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
+                    @isset($settings->facebook)
+                        <a class="u-icon-v3 g-width-35 g-height-35 g-font-size-16 g-color-gray-dark-v5 g-color-white--hover g-theme-bg-blue-dark-v2 g-bg-primary--hover g-transition-0_2 g-transition--ease-in"
+                           href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
+                    @endisset
                 </li>
             </ul>
         </div>
